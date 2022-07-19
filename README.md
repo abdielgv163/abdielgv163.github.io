@@ -10,4 +10,3 @@ Mi nombre es Abdiel Guerrero, soy estudiante de Matemática Algorítmica con for
 
 ### [Portafolio en vivo a través de GitHub Pages](https://abdielgv163.github.io/)
 
-![ML GIF](https://d1aueex22ha5si.cloudfront.net/Conference/1209/BackGround/Machine%20Learning-1599808127617.gif)
