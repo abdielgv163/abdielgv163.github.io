@@ -2164,14 +2164,17 @@ input, select, textarea {
 		border: 0;
 		display: inline-block;
 		position: relative;
+		
 	}
 
 		.image img {
 			display: block;
+			
 		}
 
 		.image.left, .image.right {
 			max-width: 30%;
+			
 		}
 
 			.image.left img, .image.right img {
@@ -2182,6 +2185,7 @@ input, select, textarea {
 			float: left;
 			margin: 0 1.5em 1.25em 0;
 			top: 0.25em;
+			
 		}
 
 		.image.right {
@@ -2204,6 +2208,7 @@ input, select, textarea {
 			display: block;
 			margin: 2.5em 0;
 			width: 100%;
+			
 		}
 
 			.image.main img {
