@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 
 <head>
@@ -14,6 +9,19 @@
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
+
+    <!-- KATEX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
+        integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"
+        integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"></script>
+
+
+
 </head>
 
 <body class="is-preload">
@@ -22,16 +30,18 @@
     <div id="wrapper">
 
         <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo"><strong>Portafolio</strong> <span>Abdiel Guerrero V.</span></a>
+        <!-- Note: The "styleN" class below should match that of the banner element. -->
+        <header id="header" class="alt style2">
+            <a href="index.html" class="logo"><strong>Volver al Inicio</strong> <span>Portafolio</span></a>
             <nav>
                 <a href="#menu">Menu</a>
             </nav>
         </header>
 
         <!-- Menu -->
-        
+
         <nav id="menu">
+
             <ul class="actions stacked">
                 <li><a href="index.html" class="button fit">Home</a></li>
                 <li><a href="aboutme.html" class="button fit">Sobre mí</a></li>
@@ -39,105 +49,332 @@
                 <li><a href="https://github.com/abdielgv163/abdielgv163.github.io" class="button primary fit">Volver a
                         GitHub</a></li>
             </ul>
-        
+
         </nav>
 
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+        <section id="banner" class="style2">
+            <div class="inner">
+                <span class="image">
+                    <img src="images/pic07.jpg" alt="" />
+                </span>
+                <header class="major">
+                    <h1>Portafolio Quantum Computing 💻🔬</h1>
+                </header>
+                <div class="content">
+                    <p>Hola! <br />
+                        Bienvenidx a la sección de Computación Cuántica </A></p>
+                </div>
+            </div>
+        </section>
+
         <!-- Main -->
-        <div id="main" class="alt">
+        <div id="main">
 
             <!-- One -->
             <section id="one">
                 <div class="inner">
                     <header class="major">
-                        <h1>Quantum Computing</h1>
+                        <h2>Sección: Quantum Computing</h2>
                     </header>
-                    <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque
-                        venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim
-                        auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque
-                        in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar
-                        mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque
-                        enim turpis, hendrerit.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class
-                        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam
-                        tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc
-                        ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non,
-                        bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus.
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In
-                        non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.
+                    <p>En esta sección se encuentran alojados distintos ejercicios de los diversos IBM Quantum Challenge que he completado,
+                        desde las nociones más básicas de la computación cuántica, compuertas, algoritmos, hasta 
+                        aplicaciones con módulos enfocados a Finanzas, Machine Learning, etc.
+                        Adicionalmente se encuentra un ejercicio que resolví para aplicar al IQOSF Mentorship Program
+                        que resolví aplicando el concepto de la QRAM. 
+                        <br>
+                        La totalidad de los proyectos han sido realizados en Python utilizando la librería Qiskit.
                     </p>
-                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor
-                        imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet.
-                        Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at,
-                        elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
                 </div>
             </section>
 
+
+            <!-- Two -->
+
+            <section id="two" class="spotlights">
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/IQOSF_Task1.PNG" alt="" data-position="center center"
+                            style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>IQOSF Mentorship Program:<br> Task 1</h3>
+                            </header>
+                            <p>
+                                Solución a un problema para aplicar al programa de mentorías IQOSF, 
+                                consiste en construir un circuito cuántico que recibe un vector de valores reales $[1~5~7~10]$ como entrada
+                                y devuelve a la salida el estado cuántico $\frac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$.
+                                <br>
+                                La lógica de la solución consiste en marcar y devolver los índices para los cuales su valor binario cuenta con todos los
+                                bits adyacentes diferentes entre sí. 
+                                
+                            </p>
+
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/IQOSF_Task_1/Task_1.html" class="button">Accede al Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/toffoli.PNG" alt="" data-position="top center"
+                            style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Toffoli Gate</h3>
+                            </header>
+                            <p>
+                                Introducción a las compuertas cuánticas y circuitos cuánticos, introducción al uso del compositor de circuitos
+                                y creación de una compuerta de Toffoli a partir de compuertas de rotación básicas.
+
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/Toffoli_gate/ex1-Toffoli gate.html" class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/deustJZAlgoritm.PNG" alt="" data-position="top center" style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Basic Rotations, Multi-Qubit Gates and <br>Deutsch-Jozsa Algorithm </h3>
+                            </header>
+                            <p>
+                                Introducción a las rotaciones básicas efectuadas por las compuertas cuánticas, 
+                                concepto de la Esfera de Bloch para visualizar rotaciones, a las compuertas multi-Qubit y 
+                                concepto e implementación del algoritmo de Deutsch-Jozsa.
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/RotacionesBloch/lab-1-BasicRotaions-MultiQubitGates-DeutsJozsa-Algorithm.html" class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/shorAlgorithm.PNG" alt="" data-position="top center" style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Shor's Algorithm</h3>
+                            </header>
+                            <p>
+                                Implementación del famoso Algoritmo de Shor, documentando la historia y enfoque del algoritmo,
+                                el modelo matemático del mismo y su implementación den Qiskit por medio de compuertas cuánticas. 
+                                Para posteriormente utilizarlo para factorizar el número 35 (límite permitido por el número de Qubits disponibles) 
+                                y ejecutarlo en un computador cuántico real.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/ShorsAlgorithm/ex2-Shor-s-algorithm.html" class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/variationalAlgoritmhs.PNG" alt="" data-position="top center" style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Introduction to Variational Algorithms</h3>
+                            </header>
+                            <p>
+                                Introducción a los Algoritmos Variacionales Cuánticos, en particular con el VQE.
+                                Además de mostrar la creación de circuitos parametrizados, el Quadratic Program en Qiskit 
+                                y cómo resolver problemas de optimización utilizando QAOA. 
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/variationalAlgorithms/lab-2-Introduction-to-Variational-Algorithms.html" class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/quantumKernelsAndVSM.PNG" alt="" data-position="top center"
+                            style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Quantum Kernels and Support Vector Machines</h3>
+                            </header>
+                            <p>
+                                Implementación de Quantum Feature Maps, Quantum Kernels para 
+                                concluir con la realización de 
+                                un clasificador de imágenes utilizando Quantum Support Vector Machines.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/SupportVectorMachines/lab-3-Quantum-Kernels-and-Support-Vector-Machines.html" class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+            
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/parametrizedCircuits.PNG" alt="" data-position="top center"
+                            style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Training Parameterized Quantum Circuits</h3>
+                            </header>
+                            <p>
+                                Se profundiza en la creación de distintos clasificadores variacionales cuánticos,
+                                en cómo utilizar distintas técnicas de entrenamiento, especialmente los basados en gradientes;
+                                y sobre cuáles son las restricciones de los modelos basados en técnicas variacionales.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/Parameterized_Quantum_Circuits/lab-4-Training-Parameterized-Quantum-Circuits.html"
+                                        class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/QPT.png" alt="" data-position="top center"
+                            style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Hardware Efficient Ansatze for <br>Quantum Machine Learning</h3>
+                            </header>
+                            <p>
+                                Lab que muestra los efectos del ruido en un circuito parametrizado típico usado en Machine Learning
+                                , además se introduce al uso de Circuitos de Tomografía de Proceso Cuántico.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/AnzatsEficiente/lab-5-Hardware-Efficient-Ansatze-for-Quantum-Machine-Learning.html"
+                                        class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/cropiyieldproblem.PNG" alt="" data-position="top center" style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Crop-Yield Problem</h3>
+                            </header>
+                            <p>
+                                Introducción al Quadratic Problem para después solucionar el Crop-Yield problem,
+                                modelando el problema a través del Quadratic Problem utilizando Circuitos Cuánticos y el QAOA.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/QCAfrica_1/Lab_1_Crop-Yield-Problem.html"
+                                        class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/quantumfinances.PNG" alt="" data-position="top center"
+                            style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Quantum speedups in finance</h3>
+                            </header>
+                            <p>
+                                Introducción a los instrumentos financieros típicos del modelos de Monte Carlo.
+                                Además de implementar un Algoritmo Cuántico para calcular el precio de instrumentos financieros.
+                                Esto utilizando el módulo de Finanzas de Qiskit.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/QCAfrica_2/Lab_2_Quantum_Speedups_in_Finance.html"
+                                        class="button">Accede al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <a class="image">
+                        <img src="images/quantum/quantumVIH.PNG" alt="" data-position="top center" style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Quantum Chemistry for HIV</h3>
+                            </header>
+                            <p>
+                                Aplicación del módulo de Química de Qiskit para resolver problemas de definición geométrica de moléculas,
+                                cálculo del Hamiltoniano, conversión de Qubits Hamiltonianos, uso de VQE y cálculo del estado de mínima energia.
+                                <br>
+                                Todo esto con el fin de simular una molécula proteasa y un antirretroviral que formarán una macromolécula que
+                                simulará la interacción entre estos y cómo es que se podrían diseñar nuevos fármacos aprovechando sistemas cuánticos en conjunto
+                                con sistemas clásicos dentro de sistemas híbridos.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="proyects/quantum/QCAfrica_2/Lab_2_Quantum_Speedups_in_Finance.html" class="button">Accede
+                                        al
+                                        Notebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
         </div>
 
-        <!-- Contact -->
-        <section id="contact">
-            <div class="inner">
-                <section>
-                    <form method="post" action="#">
-                        <div class="fields">
-                            <div class="field half">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" id="name" />
-                            </div>
-                            <div class="field half">
-                                <label for="email">Email</label>
-                                <input type="text" name="email" id="email" />
-                            </div>
-                            <div class="field">
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" rows="6"></textarea>
-                            </div>
-                        </div>
-                        <ul class="actions">
-                            <li><input type="submit" value="Send Message" class="primary" /></li>
-                            <li><input type="reset" value="Clear" /></li>
-                        </ul>
-                    </form>
-                </section>
-                <section class="split">
-                    <section>
-                        <div class="contact-method">
-                            <span class="icon solid alt fa-envelope"></span>
-                            <h3>Email</h3>
-                            <a href="#">information@untitled.tld</a>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="contact-method">
-                            <span class="icon solid alt fa-phone"></span>
-                            <h3>Phone</h3>
-                            <span>(000) 000-0000 x12387</span>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="contact-method">
-                            <span class="icon solid alt fa-home"></span>
-                            <h3>Address</h3>
-                            <span>1234 Somewhere Road #5432<br />
-                                Nashville, TN 00000<br />
-                                United States of America</span>
-                        </div>
-                    </section>
-                </section>
-            </div>
+
+
         </section>
 
         <!-- Footer -->
         <footer id="footer">
             <div class="inner">
                 <ul class="icons">
-                    <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                    <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    <h3>Encuéntrame en:</h3>
+                    <link rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <li><a href="https://twitter.com/AbdielGuerrer20" class="fa fa-twitter"></a></li>
+                    <li><a href="https://github.com/abdielgv163" class="fa fa-github"></a></li>
+                    <li><a href="https://www.linkedin.com/in/abdiel-guerrero-162-gv/" class="fa fa-linkedin"></a></li>
                 </ul>
+
                 <ul class="copyright">
                     <li>&copy; Untitled</li>
                     <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
@@ -155,7 +392,8 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- Scripts de KATEX -->
+    <script src="assets/js/renderMath.js"></script>
 
 </body>
-
 </html>
