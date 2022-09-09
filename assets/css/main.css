@@ -123,7 +123,12 @@ input, select, textarea {
 /*        TYPE       */
 
 	body, input, select, textarea {
-		color: #ffffff;
+
+		/*                                       */
+		/*    COLOR DE LETRAS A LADO DE BOTON    */
+		/*                                       */
+		color: rgba(245, 245, 245, 0.808);
+		
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 17pt;
 		font-weight: 300;
@@ -1982,19 +1987,19 @@ input, select, textarea {
 		border-radius: 100%;
 	}
 	::-webkit-input-placeholder {
-		color: rgba(244, 244, 255, 0.2) !important;
+		color: rgb(238, 255, 0) !important;
 		opacity: 1.0;
 	}
 	:-moz-placeholder {
-		color: rgba(244, 244, 255, 0.2) !important;
+		color: rgb(238, 255, 0) !important;
 		opacity: 1.0;
 	}
 	::-moz-placeholder {
-		color: rgba(244, 244, 255, 0.2) !important;
+		color: rgb(238, 255, 0) !important;
 		opacity: 1.0;
 	}
 	:-ms-input-placeholder {
-		color: rgba(244, 244, 255, 0.2) !important;
+		color: rgb(238, 255, 0)!important;
 		opacity: 1.0;
 	}
 
@@ -2062,7 +2067,7 @@ input, select, textarea {
 		.icon.alt:before {
 
 			/*COLORES DEL CIRCULITO DE ICONOS DE CONTACTO*/
-			background-color: #42163c33;
+			background-color: #75326c33;
 			
 			border-radius: 100%;
 			/*COLOR DE LOS ICONOS*/
@@ -2083,7 +2088,7 @@ input, select, textarea {
 	}
 	a.icon.alt:hover:before {
 		/*COLOR DE LOS ICONOS*/
-		background-color: #5d1797;
+		background-color: #8446b6;
 	}
 	a.icon.alt:active:before {
 		/*COLOR DE LOS ICONOS*/
@@ -2461,7 +2466,7 @@ input, select, textarea {
 		.button:active {
 			/*BORDES DE LOS BOTONES*/
 			box-shadow: inset 0 0 0 2px #ffffff;
-			color: #a6ff01;
+			color: #a7ff02;
 		}
 		input[type="submit"]:active,
 		input[type="reset"]:active,
@@ -2471,7 +2476,7 @@ input, select, textarea {
 
 			
 			/* COLOR DEL BOTON AL APRETARSE */
-			background-color: rgba(189, 189, 189, 0.466);
+			background-color: rgba(137, 137, 141, 0.466);
 
 			/*COLOR DEL RECUADRO AL PRESIONAR*/
 			box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.863);
@@ -2514,6 +2519,7 @@ input, select, textarea {
 		.button.next {
 			padding-right: 4.5em;
 			position: relative;
+			
 		}
 			input[type="submit"].next:before, input[type="submit"].next:after,
 			input[type="reset"].next:before,
@@ -2584,7 +2590,7 @@ input, select, textarea {
 
 
 			/*RELLENO DEL BOTON SIN  PRESIONAR*/
-			background-color: #ffffffaf;
+			background-color: #ffffffc4;
 			box-shadow: none;
 			/*COLOR DE LETRAS DE VOLVER A GITHUB*/
 			color: #000000;
@@ -2603,7 +2609,7 @@ input, select, textarea {
 
 
 				/*RELLENO DEL BOTON AL PRESIONAR*/
-				background-color: #000000;
+				background-color: #71338a;
 				color: #ffffff !important;
 
 
@@ -2616,7 +2622,7 @@ input, select, textarea {
 
 
 				/*COLOR AL PRESIONAR*/
-				background-color: #000000;
+				background-color: #71338a;
 				
 			}
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2853,7 +2859,8 @@ input, select, textarea {
 			/*COLOR DEL CUADRITO DE ARRIBA Y ABAJO*/
 			background-color: #4e0b577a;
 			/*                    */
-
+			border-top: solid 1px rgb(255, 255, 255);
+			border-bottom: solid 1px rgb(255, 255, 255);
 
 			
 		}
@@ -3456,13 +3463,13 @@ input, select, textarea {
 
 		/*COLOR DE LA PARTE DE ABAJO DEL HEADER PARA CONTENIDO*/
 		/*                                                   */
-		background-color: #000000a2;
+		background-color: #000000a6;
 		/*                                                   */
 		
 
 	}
 		#main > * {
-			border-top: solid 1px rgba(0, 0, 0, 0.459);
+			border-top: solid 1px rgba(221, 220, 220, 0.459);
 		}
 			#main > *:first-child {
 				border-top: 0;
@@ -3493,8 +3500,8 @@ input, select, textarea {
 /*     CONTACT     */
 
 	#contact {
-		
-		border-bottom: solid 1px rgba(118, 96, 129, 0.863);
+		border-top: solid 1px rgb(255, 255, 255);
+		border-bottom: solid 1px rgba(138, 116, 150, 0.836);
 		overflow-x: hidden;
 
 
@@ -3511,7 +3518,7 @@ input, select, textarea {
 
 
 				/*RAYITAS SEPARADORAS DEL CONTACTO*/
-				border-right: solid 1px rgba(118, 96, 129, 0.863);
+				border-right: solid 1px rgba(138, 116, 150, 0.836);
 
 
 				width: 60%;
@@ -3531,7 +3538,7 @@ input, select, textarea {
 
 
 						/*RAYITAS SEPARADORAS DEL TITULAR Y EL CONTACTO*/
-						border-top: solid 1px rgba(118, 96, 129, 0.863);
+						border-top: solid 1px rgba(138, 116, 150, 0.836);
 						
 
 						content: '';
@@ -3579,6 +3586,7 @@ input, select, textarea {
 /*      FOOTER      */
 
 	#footer .copyright {
+		
 		font-size: 0.8em;
 		list-style: none;
 		padding-left: 0;
@@ -3587,7 +3595,7 @@ input, select, textarea {
 
 
 			/*COLORES DEL FOOTER*/
-			border-left: solid 1px rgba(255, 255, 255, 0.5);
+			border-left: solid 1px rgba(255, 255, 255, 0.37);
 			color: rgba(255, 255, 255, 0.3);
 			
 			
@@ -3676,9 +3684,14 @@ input, select, textarea {
 		pointer-events: none;
 
 		
-		/*COLOR Y TRANSPARENCIA DEL MENU */
-		background: rgba(0, 0, 0, 0.651);
 		
+		/*COLOR Y TRANSPARENCIA DEL MENU */
+		/*                               */
+		background: rgba(0, 0, 0, 0.651);
+		/*                               */
+		
+
+
 		box-shadow: none;
 		height: 100%;
 		left: 0;
