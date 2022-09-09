@@ -2850,8 +2850,8 @@ input, select, textarea {
 
 
 			/*                    */
-			/*COLOR DEL CUADRITO 2*/
-			background-color: #3f09417a;
+			/*COLOR DEL CUADRITO DE ARRIBA Y ABAJO*/
+			background-color: #4e0b577a;
 			/*                    */
 
 
@@ -2918,8 +2918,8 @@ input, select, textarea {
 
 
 				/*                    */
-				/*COLOR DEL CUADRITO DE ENMEDOP*/
-				background-color: #1702299a;
+				/*COLOR DEL CUADRITO DE ENMEDIO*/
+				background-color: rgba(59, 14, 99, 0.466);
 				/*                    */
 
 				
@@ -3455,13 +3455,14 @@ input, select, textarea {
 		
 
 		/*COLOR DE LA PARTE DE ABAJO DEL HEADER PARA CONTENIDO*/
-		background-color: #00000059;
-
+		/*                                                   */
+		background-color: #000000a2;
+		/*                                                   */
 		
 
 	}
 		#main > * {
-			border-top: solid 1px rgba(212, 212, 255, 0.1);
+			border-top: solid 1px rgba(0, 0, 0, 0.459);
 		}
 			#main > *:first-child {
 				border-top: 0;
