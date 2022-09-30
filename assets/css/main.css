@@ -101,7 +101,7 @@ input, select, textarea {
 	
 	/*COLOR DEL CUERPO DEL DOCUMENTO*/
 	body {
-		background: #20022cfb;
+		background: #3e2d46;
 	}
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -127,7 +127,7 @@ input, select, textarea {
 		/*                                       */
 		/*    COLOR DE LETRAS A LADO DE BOTON    */
 		/*                                       */
-		color: rgba(245, 245, 245, 0.808);
+		color: rgb(245, 245, 245);
 		
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 17pt;
@@ -2114,7 +2114,7 @@ input, select, textarea {
 			
 		}
 		.image.left, .image.right {
-			max-width: 30%;
+			max-width: 60%;
 			
 		}
 			.image.left img, .image.right img {
@@ -2727,9 +2727,7 @@ input, select, textarea {
 
 
 				/*COLOR DE LOS CUADROS AL POSICIONAR EL MOUSE*/
-				background-color: #000000f6;
-				
-				
+				background-color: #575757;
 				content: '';
 				display: block;
 				height: 100%;
@@ -2757,22 +2755,22 @@ input, select, textarea {
 				width: 60%;
 			}
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #582291c5;
+				background-color: #57129c99;
 			}
 			.tiles article:nth-child(6n - 4):before {
-				background-color: #831f72c5;
+				background-color: #a024a6c5;
 			}
 			.tiles article:nth-child(6n - 3):before {
-				background-color: #46738ad2;
+				background-color: #669fbcd2;
 			}
 			.tiles article:nth-child(6n - 2):before {
-				background-color: #468856c2;
+				background-color: #2e9f55ac;
 			}
 			.tiles article:nth-child(6n - 1):before {
 				background-color: #e8e497;
 			}
 			.tiles article:nth-child(6n):before {
-				background-color: #87c5a4;
+				background-color: #589776;
 			}
 		@media screen and (max-width: 1280px) {
 			.tiles article {
@@ -2856,8 +2854,11 @@ input, select, textarea {
 
 
 			/*                    */
+
+			
 			/*COLOR DEL CUADRITO DE ARRIBA Y ABAJO*/
-			background-color: #4e0b577a;
+			background-color: rgba(169, 123, 181, 0.468);
+
 			/*                    */
 			border-top: solid 1px rgb(255, 255, 255);
 			border-bottom: solid 1px rgb(255, 255, 255);
@@ -2866,6 +2867,31 @@ input, select, textarea {
 		}
 
 
+			.spotlights > section > .imageb {
+				background-position: center center;
+				background-size: cover;
+				border-radius: 0;
+				display: block;
+				position: relative;
+				width: 50%;
+				margin-right: 25px;
+			}.spotlights > section > .imageb img {
+				border-radius: 0;
+				display: inline-block;
+				width: 100%;
+				margin-top: 60px;
+				margin-bottom: 60px;
+			}
+			.spotlights > section > .imageb:before {
+				background: rgba(175, 70, 186, 0.792);
+				content: '';
+				display: block;
+				height: 100%;
+				left: 0;
+				opacity: 0;
+				position: absolute;
+				top: 0;
+			}
 
 
 			.spotlights > section > .image {
@@ -2874,15 +2900,18 @@ input, select, textarea {
 				border-radius: 0;
 				display: block;
 				position: relative;
-				width: 30%;
+				width: 50%;
 			}
 			.spotlights > section > .image img {
 					border-radius: 0;
-					display: block;
+					display: inline-block;
 					width: 100%;
+					margin-top: 60px;
+					margin-bottom: 60px;
+					margin-left: 25px;
 				}
 				.spotlights > section > .image:before {
-					background: rgba(68, 46, 109, 0.9);
+					background: rgb(255, 30, 236);
 					content: '';
 					display: block;
 					height: 100%;
@@ -2890,7 +2919,6 @@ input, select, textarea {
 					opacity: 0;
 					position: absolute;
 					top: 0;
-					width: 100%;
 				}
 			.spotlights > section > .content {
 				display: -moz-flex;
@@ -2922,12 +2950,15 @@ input, select, textarea {
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
 				flex-direction: row-reverse;
+				
+
 
 
 				/*                    */
 				/*COLOR DEL CUADRITO DE ENMEDIO*/
-				background-color: rgba(59, 14, 99, 0.466);
+				background-color: rgba(90, 68, 115, 0.606);
 				/*                    */
+
 
 				
 				
@@ -2941,6 +2972,7 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 			.spotlights > section > .image {
 				width: 40%;
+				
 			}
 			.spotlights > section > .content {
 				width: 60%;
@@ -2949,6 +2981,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 			.spotlights > section > .image {
 				width: 45%;
+				
 			}
 			.spotlights > section > .content {
 				width: 55%;
@@ -3027,7 +3060,7 @@ input, select, textarea {
 		display: flex;		
 
 		/*COLOR DEL TITULO CUANDO BAJAS EL SCROLL*/
-		background-color: #492d55;
+		background-color: #3e2d46;
 		
 		box-shadow: 0 0 0.25em 0 #ffffff;
 		cursor: default;
@@ -3375,23 +3408,24 @@ input, select, textarea {
 			#banner.major.alt {
 				opacity: 0.75;
 			}
+		/*FONDOS DEL BANNER PRINCIPAL DE CADA PAGINA*/
 		#banner.style1:after {
-			background-color: #9653bd;
+			background-color: #3e2d46;
 		}
 		#banner.style2:after {
-			background-color: #6d175fd2;
+			background-color: #3e2d46;
 		}
 		#banner.style3:after {
-			background-color: #507d92cb;
+			background-color: #3e2d46;
 		}
 		#banner.style4:after {
-			background-color: #3c7949da;
+			background-color: #3e2d46;
 		}
 		#banner.style5:after {
-			background-color: #e8e497;
+			background-color: #3e2d46;
 		}
 		#banner.style6:after {
-			background-color: #87c5a4;
+			background-color: #3e2d46;
 		}
 		body.is-preload #banner:after {
 			opacity: 1.0;
@@ -3461,9 +3495,9 @@ input, select, textarea {
 
 		
 
-		/*COLOR DE LA PARTE DE ABAJO DEL HEADER PARA CONTENIDO*/
+		/*COLOL PARA LA PARTE NEGRA DE LA PRESENTACION*/
 		/*                                                   */
-		background-color: #000000a6;
+		background-color: #000000c0;
 		/*                                                   */
 		
 
