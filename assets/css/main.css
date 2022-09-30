@@ -2853,8 +2853,6 @@ input, select, textarea {
 			flex-direction: row;
 
 
-			/*                    */
-
 			
 			/*COLOR DEL CUADRITO DE ARRIBA Y ABAJO*/
 			background-color: rgba(169, 123, 181, 0.468);
@@ -2872,21 +2870,21 @@ input, select, textarea {
 				background-size: cover;
 				border-radius: 0;
 				display: block;
+				width: 90%;
 				position: relative;
-				width: 50%;
-				margin-right: 25px;
+				margin-left: 2%;
 			}.spotlights > section > .imageb img {
 				border-radius: 0;
 				display: inline-block;
-				width: 100%;
-				margin-top: 60px;
-				margin-bottom: 60px;
+				width: 90%;
+				margin-top: 6%;
+				margin-bottom: 2%;
 			}
 			.spotlights > section > .imageb:before {
 				background: rgba(175, 70, 186, 0.792);
 				content: '';
 				display: block;
-				height: 100%;
+				height: 90%;
 				left: 0;
 				opacity: 0;
 				position: absolute;
@@ -2900,21 +2898,22 @@ input, select, textarea {
 				border-radius: 0;
 				display: block;
 				position: relative;
-				width: 50%;
+				width: 90%;
 			}
 			.spotlights > section > .image img {
 					border-radius: 0;
 					display: inline-block;
-					width: 100%;
-					margin-top: 60px;
-					margin-bottom: 60px;
-					margin-left: 25px;
+					width: 90%;
+					margin-top: 6%;
+					margin-bottom: 2%;
+					position: relative;
+					margin-left: 2%;
 				}
 				.spotlights > section > .image:before {
 					background: rgb(255, 30, 236);
 					content: '';
 					display: block;
-					height: 100%;
+					height: 90%;
 					left: 0;
 					opacity: 0;
 					position: absolute;
