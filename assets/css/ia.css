@@ -25,7 +25,8 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 	max-width: 100%;
-    overflow-x: hidden;}
+    overflow-x: hidden;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -103,7 +104,7 @@ input, select, textarea {
 	
 	/*COLOR DEL CUERPO DEL DOCUMENTO*/
 	body {
-		background: #2d1f33;
+		background: #000000ec;
 	}
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -2118,6 +2119,7 @@ input, select, textarea {
 		border: 0;
 		display: inline-block;
 		position: relative;
+		margin: 0% 0% 0% 0%;
 		
 	}
 		.image img {
@@ -2126,6 +2128,7 @@ input, select, textarea {
 		}
 		.image.left, .image.right {
 			max-width: 60%;
+			margin: 0% 0% 0% 0%;
 			
 		}
 			.image.left img, .image.right img {
@@ -2145,15 +2148,15 @@ input, select, textarea {
 		.image.fit {
 			display: block;
 			margin: 0 0 2em 0;
-			width: 100%;
+			width: 60%;
 		}
 			.image.fit img {
-				width: 100%;
+				width: 60%;
 			}
 		.image.main {
 			display: block;
 			margin: 2.5em 0;
-			width: 100%;
+			width: 60%;
 			
 		}
 			.image.main img {
@@ -2161,7 +2164,7 @@ input, select, textarea {
 			}
 			@media screen and (max-width: 736px) {
 				.image.main {
-					margin: 1.5em 0;
+					margin: em 0;
 				}
 			}
 
@@ -2623,7 +2626,6 @@ input, select, textarea {
 			.button.primary:hover,
 			.button.primary:active {
 
-
 				/*RELLENO DEL BOTON AL PRESIONAR*/
 				background-color: #71338a8a;
 				color: #ffffff !important;
@@ -2638,7 +2640,7 @@ input, select, textarea {
 
 
 				/*COLOR AL PRESIONAR*/
-				background-color: #71338aad;
+				background-color: #71338a8a;
 				
 			}
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2672,7 +2674,7 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		border-top: solid 1px rgb(255, 255, 255) !important;
+		border-top: 0 !important;
 	}
 		.tiles + * {
 			border-top: 0 !important;
@@ -2740,6 +2742,8 @@ input, select, textarea {
 				z-index: 2;
 			}
 			.tiles article:after {
+
+
 				/*COLOR DE LOS CUADROS AL POSICIONAR EL MOUSE*/
 				background-color: #575757;
 				content: '';
@@ -2769,16 +2773,16 @@ input, select, textarea {
 				width: 60%;
 			}
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #57129c80;
+				background-color: #57129c99;
 			}
 			.tiles article:nth-child(6n - 4):before {
-				background-color: #a024a683;
+				background-color: #a024a6c5;
 			}
 			.tiles article:nth-child(6n - 3):before {
-				background-color: #669fbc7e;
+				background-color: #669fbcd2;
 			}
 			.tiles article:nth-child(6n - 2):before {
-				background-color: #2e9f5679;
+				background-color: #2e9f55ac;
 			}
 			.tiles article:nth-child(6n - 1):before {
 				background-color: #e8e497;
@@ -2869,9 +2873,8 @@ input, select, textarea {
 
 			
 			/*COLOR DEL CUADRITO DE ARRIBA Y ABAJO*/
-			background-color: rgba(72, 49, 82, 0.399);
+			background-color: rgba(255, 91, 239, 0.269);
 
-			
 			/*                    */
 			border-top: solid 1px rgb(255, 255, 255);
 			border-bottom: solid 1px rgb(255, 255, 255);
@@ -2879,34 +2882,33 @@ input, select, textarea {
 			
 		}
 
-
+			/* NEGRAS */
 			.spotlights > section > .imageb {
 				background-position: center center;
 				background-size: cover;
 				border-radius: 0;
 				display: block;
-				width: 90%;
+				width: 80%;
 				position: relative;
-				margin-left: 2%;
+				margin: 1.5% 1% 1% 6%;
 			}.spotlights > section > .imageb img {
 				border-radius: 0;
 				display: inline-block;
 				width: 90%;
-				margin-top: 6%;
-				margin-bottom: 2%;
+				margin: 2% 10% 0% 10%;
 			}
 			.spotlights > section > .imageb:before {
 				background: rgba(175, 70, 186, 0.792);
 				content: '';
 				display: block;
-				height: 90%;
+				height: 80%;
 				left: 0;
 				opacity: 0;
 				position: absolute;
 				top: 0;
 			}
 
-
+			/* MORADAS */
 			.spotlights > section > .image {
 				background-position: center center;
 				background-size: cover;
@@ -2914,15 +2916,16 @@ input, select, textarea {
 				display: block;
 				position: relative;
 				width: 90%;
+				margin: 0% 1% 0% 2%;
 			}
 			.spotlights > section > .image img {
 					border-radius: 0;
 					display: inline-block;
 					width: 90%;
-					margin-top: 6%;
-					margin-bottom: 2%;
+					margin-top: 10%;
+					margin-bottom: 0%;
 					position: relative;
-					margin-left: 2%;
+					margin-left: 4%;
 				}
 				.spotlights > section > .image:before {
 					background: rgb(255, 30, 236);
@@ -2951,7 +2954,7 @@ input, select, textarea {
 				-webkit-align-items: center;
 				-ms-align-items: center;
 				align-items: center;
-				padding: 2em 3em 0.1em 3em ;
+				padding: 1% 3% 1% 3%;
 				width: 70%;
 			}
 				.spotlights > section > .content > .inner {
@@ -2970,7 +2973,7 @@ input, select, textarea {
 
 				/*                    */
 				/*COLOR DEL CUADRITO DE ENMEDIO*/
-				background-color: rgba(0, 0, 0, 0.346);
+				background-color: rgba(0, 0, 0, 0.439);
 				/*                    */
 
 
@@ -3074,7 +3077,7 @@ input, select, textarea {
 		display: flex;		
 
 		/*COLOR DEL TITULO CUANDO BAJAS EL SCROLL*/
-		background-color: #3e2d46;
+		background-color: #332639;
 		
 		box-shadow: 0 0 0.25em 0 #ffffff;
 		cursor: default;
@@ -3124,7 +3127,7 @@ input, select, textarea {
 				background-color: #000000;
 					color: #ffffff;
 					
-;
+
 
 			}
 		#header nav {
@@ -3330,7 +3333,6 @@ input, select, textarea {
 		background-repeat: no-repeat;
 		background-size: cover;
 		border-bottom: 0 !important;
-		border-top: solid 0px rgb(255, 255, 255);
 		cursor: default;
 			height: 60vh;
 			margin-bottom: -3.25em;
@@ -3425,22 +3427,22 @@ input, select, textarea {
 			}
 		/*FONDOS DEL BANNER PRINCIPAL DE CADA PAGINA*/
 		#banner.style1:after {
-			background-color: #3e2d46;
+			background-color: #997396d6;
 		}
 		#banner.style2:after {
-			background-color: #3e2d46;
+			background-color: #997396d6;
 		}
 		#banner.style3:after {
-			background-color: #3e2d46;
+			background-color: #837399d6;
 		}
 		#banner.style4:after {
-			background-color: #3e2d46;
+			background-color: #997396d6;
 		}
 		#banner.style5:after {
-			background-color: #3e2d46;
+			background-color: #997396d6;
 		}
 		#banner.style6:after {
-			background-color: #3e2d46;
+			background-color: #ffffff;
 		}
 		body.is-preload #banner:after {
 			opacity: 1.0;
@@ -3507,15 +3509,10 @@ input, select, textarea {
 /* Main */
 	
 	#main {
-
-		
-
 		/*COLOL PARA LA PARTE NEGRA DE LA PRESENTACION*/
 		/*                                                   */
-		background-color: #000000c0;
+		background-color: rgb(5, 5, 5);
 		/*                                                   */
-		
-
 	}
 		#main > * {
 			
@@ -3524,14 +3521,30 @@ input, select, textarea {
 				border-top: 0;
 			}
 			#main > * > .inner {
-				padding: 4em 0 2em 0 ;
+				padding: 3% 1% 3% 1% ;
 				margin: 0 auto;
 				max-width: 65em;
 				width: calc(100% - 6em);
 			}
 				@media screen and (max-width: 736px) {
 					#main > * > .inner {
-						padding: 1% 1.5% 1% 1.5%;
+						padding: 3em 0 1em 0 ;
+						width: calc(100% - 3em);
+					}
+				}
+
+			#main > * > .inner2 {
+				border-top: solid 1px rgb(255, 255, 255);
+				padding: 0% 0% 0% 0% ;
+				margin: 0 auto;
+				max-width: 100%;
+				width: calc(100%);
+				background-color: #3f2b41;
+				border-bottom: solid 1px rgb(255, 255, 255);
+			}
+				@media screen and (max-width: 1080px) {
+					#main > * > .inner2 {
+						padding: 5% 10% 5% 10% ;
 						width: calc(100%);
 					}
 				}
@@ -3550,8 +3563,10 @@ input, select, textarea {
 
 	#contact {
 		border-top: solid 1px rgb(255, 255, 255);
-		border-bottom: solid 0.5px rgba(255, 255, 255, 0.836);
+		border-bottom: solid 1px rgba(138, 116, 150, 0.836);
 		overflow-x: hidden;
+
+
 	}
 		#contact > .inner {
 			display: -moz-flex;
@@ -3561,11 +3576,13 @@ input, select, textarea {
 			padding: 0 !important;
 		}
 			#contact > .inner > :nth-child(2n - 1) {
-				padding: 2em 3em 0em 0 ;
+				padding: 4em 3em 2em 0 ;
 
 
 				/*RAYITAS SEPARADORAS DEL CONTACTO*/
-				border-right: solid 0.5px rgba(255, 255, 255, 0.836);
+				border-right: solid 1px rgba(138, 116, 150, 0.836);
+
+
 				width: 60%;
 			}
 			#contact > .inner > :nth-child(2n) {
@@ -3583,7 +3600,7 @@ input, select, textarea {
 
 
 						/*RAYITAS SEPARADORAS DEL TITULAR Y EL CONTACTO*/
-						border-top: solid .5px rgba(255, 255, 255, 0.836);
+						border-top: solid 1px rgba(138, 116, 150, 0.836);
 						
 
 						content: '';
@@ -3629,8 +3646,10 @@ input, select, textarea {
 
 
 /*      FOOTER      */
+
 	#footer .copyright {
-		font-size: 0.8em;
+		
+		font-size: 1em;
 		list-style: none;
 		padding-left: 0;
 	}
@@ -3640,8 +3659,8 @@ input, select, textarea {
 			color: rgba(255, 255, 255, 0.3);	
 			display: inline-block;
 			line-height: 1;
-			margin-left: 1em;
-			padding-left: 1em;
+			margin-left: 1%;
+			padding-left: 1%;
 		}
 			#footer .copyright li:first-child {
 				border-left: 0;
