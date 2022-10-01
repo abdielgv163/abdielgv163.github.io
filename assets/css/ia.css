@@ -104,7 +104,7 @@ input, select, textarea {
 	
 	/*COLOR DEL CUERPO DEL DOCUMENTO*/
 	body {
-		background: #000000ec;
+		background: #ffffff;
 	}
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -2973,7 +2973,7 @@ input, select, textarea {
 
 				/*                    */
 				/*COLOR DEL CUADRITO DE ENMEDIO*/
-				background-color: rgba(0, 0, 0, 0.439);
+				background-color: rgba(142, 238, 255, 0.371);
 				/*                    */
 
 
@@ -3511,7 +3511,7 @@ input, select, textarea {
 	#main {
 		/*COLOL PARA LA PARTE NEGRA DE LA PRESENTACION*/
 		/*                                                   */
-		background-color: rgb(5, 5, 5);
+		background-color: rgba(0, 0, 0, 0.92);
 		/*                                                   */
 	}
 		#main > * {
