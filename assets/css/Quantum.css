@@ -2879,7 +2879,7 @@ input, select, textarea {
 			
 		}
 
-		/*NEGRAS*/
+		/*AZUL*/
 		.spotlights > section > .imageb {
 			background-position: center center;
 			background-size: cover;
@@ -2888,12 +2888,12 @@ input, select, textarea {
 			
 			width: 80%;
 			position: relative;
-			margin: 1% 1% 1% 5%;
+			margin: 10% 1% 1% 5%;
 		}.spotlights > section > .imageb img {
 			border-radius: 0;
 			display: inline-block;
 			width: 90%;
-			margin: 10% 10% 10% 10%;
+			margin: 0% 10% 0% 10%;
 		}
 		.spotlights > section > .imageb:before {
 			background: rgba(175, 70, 186, 0.792);
@@ -2914,7 +2914,7 @@ input, select, textarea {
 			display: block;
 			position: relative;
 			width: 80%;
-			margin: 2% 1% 2% 5%;
+			margin: 10% 1% 2% 5%;
 		}
 		.spotlights > section > .image img {
 				border-radius: 0;

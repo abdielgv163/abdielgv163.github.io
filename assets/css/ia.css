@@ -2882,7 +2882,7 @@ input, select, textarea {
 			
 		}
 
-			/* NEGRAS */
+			/* CLARITO */
 			.spotlights > section > .imageb {
 				background-position: center center;
 				background-size: cover;
@@ -2890,12 +2890,12 @@ input, select, textarea {
 				display: block;
 				width: 80%;
 				position: relative;
-				margin: 1.5% 1% 1% 6%;
+				margin: 10% 10% 0% 7%;
 			}.spotlights > section > .imageb img {
 				border-radius: 0;
 				display: inline-block;
 				width: 90%;
-				margin: 2% 10% 0% 10%;
+				margin: 0% 10% 0% 10%;
 			}
 			.spotlights > section > .imageb:before {
 				background: rgba(175, 70, 186, 0.792);
@@ -2916,13 +2916,12 @@ input, select, textarea {
 				display: block;
 				position: relative;
 				width: 90%;
-				margin: 0% 1% 0% 2%;
+				margin: 10% 10% 0% 1%;
 			}
 			.spotlights > section > .image img {
 					border-radius: 0;
 					display: inline-block;
 					width: 90%;
-					margin-top: 10%;
 					margin-bottom: 0%;
 					position: relative;
 					margin-left: 4%;
