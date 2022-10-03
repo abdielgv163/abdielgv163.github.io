@@ -3596,7 +3596,7 @@ input, select, textarea {
 				#contact > .inner > .split > :first-child:before {
 					display: none;
 				}
-		@media screen and (max-width: 0px) {
+		@media screen and (max-width: 736px) {
 			#contact > .inner {
 				display: block;
 			}
