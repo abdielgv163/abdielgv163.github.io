@@ -2887,7 +2887,7 @@ input, select, textarea {
 				display: block;
 				width: 90%;
 				position: relative;
-				margin-left: 2%;
+				margin: 1% 10% 0% 10%;
 			}.spotlights > section > .imageb img {
 				border-radius: 0;
 				display: inline-block;
@@ -3561,16 +3561,16 @@ input, select, textarea {
 			padding: 0 !important;
 		}
 			#contact > .inner > :nth-child(2n - 1) {
-				padding: 2em 3em 0em 0 ;
+				padding: 3em 0em 0em 0em ;
 
 
 				/*RAYITAS SEPARADORAS DEL CONTACTO*/
 				border-right: solid 0.5px rgba(255, 255, 255, 0.836);
-				width: 60%;
+				width: 50%;
 			}
 			#contact > .inner > :nth-child(2n) {
-				padding-left: 3em;
-				width: 40%;
+				padding: 3em 0em 0em 0em ;
+				width: 50%;
 			}
 			#contact > .inner > .split {
 				padding: 0;
@@ -3596,7 +3596,7 @@ input, select, textarea {
 				#contact > .inner > .split > :first-child:before {
 					display: none;
 				}
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 0px) {
 			#contact > .inner {
 				display: block;
 			}
@@ -3618,7 +3618,7 @@ input, select, textarea {
 		}
 		@media screen and (max-width: 736px) {
 			#contact > .inner > :nth-child(2n - 1) {
-				padding: 3em 0 1em 0 ;
+				padding: 3em 1em 1em 0 ;
 			}
 		}
 
@@ -3633,6 +3633,7 @@ input, select, textarea {
 		font-size: 1em;
 		list-style: none;
 		padding-left: 0;
+		
 	}
 		#footer .copyright li {	
 			/*COLORES DEL FOOTER*/
@@ -3642,7 +3643,7 @@ input, select, textarea {
 			line-height: 1em;
 			margin-left: 1em;
 			padding-left: 1em;
-			
+			overflow-y: hidden; /* Hide vertical scrollbar */
 		}
 			#footer .copyright li:first-child {
 				border-left: 0;
