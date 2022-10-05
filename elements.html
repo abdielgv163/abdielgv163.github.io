@@ -6,6 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="prism/prism_dark.css"/>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 
@@ -436,8 +437,8 @@
 
 												<!-- Preformatted Code -->
 													<h3>Preformatted</h3>
-													<pre><code>i = 0;
-
+													<pre><code class="language-cpp" data-prismjs-copy="copy">
+i = 0;
 while (!deck.isInOrder()) {
     print 'Iteration ' + i;
     deck.shuffle();
@@ -446,7 +447,18 @@ while (!deck.isInOrder()) {
 
 print 'It took ' + i + ' iterations to sort the deck.';
 </code></pre>
-
+<code class="language-cpp">
+	&lt;
+	i = 0;
+	while (!deck.isInOrder()) {
+		print 'Iteration ' + i;
+		deck.shuffle();
+		i++;
+	}
+	
+	print 'It took ' + i + ' iterations to sort the deck.';
+	&gt;
+</code>
 											</div>
 										</div>
 
@@ -534,6 +546,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="prism/prism_dark.js"></script>
 
 	</body>
 </html>
