@@ -289,6 +289,7 @@ input, select, textarea {
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
+		margin: auto;
 	}
 
 		.row > * {
@@ -2469,6 +2470,7 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+		margin: auto;
 	}
 		input[type="submit"]:hover, input[type="submit"]:active,
 		input[type="reset"]:hover,
@@ -2865,6 +2867,7 @@ input, select, textarea {
 			-webkit-flex-direction: row;
 			-ms-flex-direction: row;
 			flex-direction: row;
+			padding: 0% 0% 0% 0%;
 
 
 			
@@ -2887,7 +2890,7 @@ input, select, textarea {
 				display: block;
 				width: 90%;
 				position: relative;
-				margin: 1% 10% 0% 10%;
+				margin: auto;
 			}.spotlights > section > .imageb img {
 				border-radius: 0;
 				display: inline-block;
@@ -2993,8 +2996,9 @@ input, select, textarea {
 			}
 		}
 		@media screen and (max-width: 1280px) {
-			.spotlights > section > .image {
+			.spotlights > section > .imageb:before {
 				width: 45%;
+				padding: 0% 0% 0% 0%;
 				
 			}
 			.spotlights > section > .content {
@@ -3528,11 +3532,12 @@ input, select, textarea {
 				margin: 0 auto;
 				max-width: 65em;
 				width: calc(100% - 6em);
+				
 			}
 				@media screen and (max-width: 736px) {
 					#main > * > .inner {
-						padding: 1% 5% 1% 5%;
-						width: calc(100%);
+						padding: 0% 0% 0% 0%;
+						width: calc(100%-1em);
 					}
 				}
 		#main.alt {
