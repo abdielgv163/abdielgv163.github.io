@@ -3692,7 +3692,7 @@ input, select, textarea {
 		-webkit-transition: -webkit-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		-ms-transition: -ms-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
-		padding: 0% 15% 0% 15%;
+		padding: 0% 12% 0% 12%;
 		
 	}
 
@@ -3703,18 +3703,18 @@ input, select, textarea {
 		padding: 4em 0 2em 0;
 		margin: 0 auto;
 		max-width: 65em;
-		width: calc(100% - 6em);
+		width: calc(100% );
 	}
 	@media screen and (max-width: 736px) {
 		#wrapper>*>.inner {
-			padding: 0% 0% 0% 0%;
+			padding: 0% 3% 0% 3%;
 			width: calc(100%);
 		}
 	}
 	@media screen and (max-width: 736px) {
 		#wrapper {
 			padding-top: 2.75em;
-			padding: 0% 0% 0% 0%;
+			padding: 0% 3% 0% 3%;
 		}
 	}
 
