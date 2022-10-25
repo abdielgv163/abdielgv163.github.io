@@ -2482,8 +2482,8 @@ input, select, textarea {
 		.button:hover,
 		.button:active {
 			/*BORDES DE LOS BOTONES*/
-			background-color: #888888a2;
-			box-shadow: inset 0 0 0 2px #c895cd;
+			background-color: #88888879;
+			box-shadow: inset 0 0 0 2px #ffffff;
 			color: #ffffff;
 		}
 		input[type="submit"]:active,
@@ -2627,7 +2627,7 @@ input, select, textarea {
 
 
 				/*RELLENO DEL BOTON AL PRESIONAR*/
-				background-color: #71338a8a;
+				background-color: #5b2d6ead;
 				color: #ffffff !important;
 
 
@@ -2640,7 +2640,7 @@ input, select, textarea {
 
 
 				/*COLOR AL PRESIONAR*/
-				background-color: #71338aad;
+				background-color: #5a2d6e;
 				
 			}
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2771,7 +2771,7 @@ input, select, textarea {
 				width: 60%;
 			}
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #403149;
+				background-color: #310941;
 			}
 			.tiles article:nth-child(6n - 4):before {
 				background-color: #353957;
@@ -2785,11 +2785,11 @@ input, select, textarea {
 				
 			}
 			.tiles article:nth-child(6n - 1):before {
-				background-color: #29532cf1;
+				background-color: #2f5231f1;
 				
 			}
 			.tiles article:nth-child(6n):before {
-				background-color: #2f6b6cd6;
+				background-color: #2e595ad6;
 				
 			}
 		@media screen and (max-width: 1280px) {
@@ -3713,7 +3713,7 @@ input, select, textarea {
 		
 		/*COLOR Y TRANSPARENCIA DEL MENU */
 		/*                               */
-		background: rgba(0, 0, 0, 0.651);
+		background: rgba(63, 38, 97, 0.629);
 		/*                               */
 		
 

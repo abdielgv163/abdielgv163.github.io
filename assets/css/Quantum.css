@@ -2480,9 +2480,9 @@ input, select, textarea {
 		.button:hover,
 		.button:active {
 			/*BORDES DE LOS BOTONES*/
-			background-color: #888888a2;
-			box-shadow: inset 0 0 0 2px #c895cd;
-			color: #ffffff;
+			background-color: #8888887b;
+			box-shadow: inset 0 0 0 2px #ffffff;
+			color: #ffffffba;
 		}
 		input[type="submit"]:active,
 		input[type="reset"]:active,
@@ -2624,7 +2624,7 @@ input, select, textarea {
 			.button.primary:active {
 
 				/*RELLENO DEL BOTON AL PRESIONAR*/
-				background-color: #71338a8a;
+				background-color: #53338a8a;
 				color: #ffffff !important;
 
 
@@ -2637,7 +2637,7 @@ input, select, textarea {
 
 
 				/*COLOR AL PRESIONAR*/
-				background-color: #71338a8a;
+				background-color: #53338aab;
 				
 			}
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2820,31 +2820,6 @@ input, select, textarea {
 					width: 100% !important;
 				}
 		}
-
-
-
-
-
-
-
-/*     CONTACT METHOD       */
-
-	.contact-method {
-		margin: 0 0 2em 0;
-		padding-left: 3.25em;
-		position: relative;
-	}
-		.contact-method .icon {
-			left: 0;
-			position: absolute;
-			top: 0;
-		}
-		.contact-method h3 {
-			margin: 0 0 0.5em 0;
-		}
-
-
-
 
 
 
@@ -3049,7 +3024,7 @@ input, select, textarea {
 		display: flex;		
 
 		/*COLOR DEL TITULO CUANDO BAJAS EL SCROLL*/
-		background-color: #332639;
+		background-color: #34253D;
 		
 		box-shadow: 0 0 0.25em 0 #ffffff;
 		cursor: default;
@@ -3531,126 +3506,6 @@ input, select, textarea {
 
 
 
-/*     CONTACT     */
-
-	#contact {
-		border-top: solid 1px rgb(255, 255, 255);
-		border-bottom: solid 1px rgba(138, 116, 150, 0.836);
-		overflow-x: hidden;
-
-
-	}
-		#contact > .inner {
-			display: -moz-flex;
-			display: -webkit-flex;
-			display: -ms-flex;
-			display: flex;
-			padding: 0 !important;
-		}
-			#contact > .inner > :nth-child(2n - 1) {
-				padding: 4em 3em 2em 0 ;
-
-
-				/*RAYITAS SEPARADORAS DEL CONTACTO*/
-				border-right: solid 1px rgba(138, 116, 150, 0.836);
-
-
-				width: 60%;
-			}
-			#contact > .inner > :nth-child(2n) {
-				padding-left: 3em;
-				width: 40%;
-			}
-			#contact > .inner > .split {
-				padding: 0;
-			}
-				#contact > .inner > .split > * {
-					padding: 3em 0 1em 3em ;
-					position: relative;
-				}
-					#contact > .inner > .split > *:before {
-
-
-						/*RAYITAS SEPARADORAS DEL TITULAR Y EL CONTACTO*/
-						border-top: solid 1px rgba(138, 116, 150, 0.836);
-						
-
-						content: '';
-						display: block;
-						margin-left: -3em;
-						position: absolute;
-						top: 0;
-						width: calc(100vw + 3em);
-					}
-				#contact > .inner > .split > :first-child:before {
-					display: none;
-				}
-		@media screen and (max-width: 980px) {
-			#contact > .inner {
-				display: block;
-			}
-				#contact > .inner > :nth-child(2n - 1) {
-					padding: 4em 0 2em 0 ;
-					border-right: 0;
-					width: 100%;
-				}
-				#contact > .inner > :nth-child(2n) {
-					padding-left: 0;
-					width: 100%;
-				}
-				#contact > .inner > .split > * {
-					padding: 3em 0 1em 0 ;
-				}
-				#contact > .inner > .split > :first-child:before {
-					display: block;
-				}
-		}
-		@media screen and (max-width: 736px) {
-			#contact > .inner > :nth-child(2n - 1) {
-				padding: 3em 0 1em 0 ;
-			}
-		}
-
-
-
-
-
-
-
-/*      FOOTER      */
-#footer .copyright {
-	font-size: 1em;
-	list-style: none;
-	padding-left: 0;
-	
-}
-	#footer .copyright li {	
-		/*COLORES DEL FOOTER*/
-		border-left: solid 1px rgba(255, 255, 255, 0.37);
-		color: rgba(255, 255, 255, 0.3);	
-		display: inline-block;
-		line-height: 1em;
-		margin-left: 1em;
-		padding-left: 1em;
-		overflow-y: hidden; /* Hide vertical scrollbar */
-	}
-		#footer .copyright li:first-child {
-			border-left: 0;
-			margin-left: 0;
-			padding-left: 0;
-		}
-@media screen and (max-width: 480px) {
-	#footer .copyright li {
-		display: block;
-		border-left: 0;
-		margin-left: 0;
-		padding-left: 0;
-		line-height: inherit;
-	}
-}
-
-
-
 
 
 
@@ -3717,7 +3572,7 @@ input, select, textarea {
 		
 		/*COLOR Y TRANSPARENCIA DEL MENU */
 		/*                               */
-		background: rgba(0, 0, 0, 0.651);
+		background: rgba(33, 14, 57, 0.694);
 		/*                               */
 		
 
