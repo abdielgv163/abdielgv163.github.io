@@ -305,7 +305,6 @@ input, select, textarea {
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
-		margin: auto;
 	}
 
 		.row > * {
@@ -2180,7 +2179,20 @@ input, select, textarea {
 				.image.main {
 					margin: 1.5em 0;
 				}
+				.image.fit{
+					margin: 5% 5% 5% 5%;
+				}
 			}
+			@media screen and (max-width: 480px) {
+				.image.main {
+					margin: 1.5em 0;
+				}
+				.image.fit{
+					margin: 5% 0% 5% 0%;
+					width: 90%;
+				}
+			}
+			
 
 
 
@@ -2303,7 +2315,6 @@ input, select, textarea {
 
 
 
-
 /* ICONS */
 
 	ul.icons {
@@ -2321,6 +2332,11 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 			ul.icons li {
 				padding: 0 0.75em 0 0;
+			}
+		}
+		@media screen and (max-width: 480px) {
+			ul.icons li {
+				padding: 0% 2%
 			}
 		}
 
@@ -3016,7 +3032,7 @@ input, select, textarea {
 				display: block;
 				position: relative;
 				width: 80%;
-				margin: auto;
+				margin: 5% 0% 5% 5%;
 			}
 			.spotlights > section > .image img {
 					border-radius: 0;
@@ -3096,8 +3112,8 @@ input, select, textarea {
 				}
 		@media screen and (max-width: 1680px) {
 			.spotlights > section > .image {
-				width: 40%;
-				margin: 5% 4% 2% 4%;
+				width: 50%;
+				margin: 10% 0% 5% 0%;
 			}
 			.spotlights > section > .content {
 				width: 60%;
@@ -3108,7 +3124,7 @@ input, select, textarea {
 
 		@media screen and (max-width: 1280px) {
 			.spotlights > section > .imageb:before {
-				width: 45%;
+				width: 80%;
 				padding: auto;
 				
 			}
@@ -3132,7 +3148,12 @@ input, select, textarea {
 		}
 		@media screen and (max-width: 736px) {
 			.spotlights > section > .content {
-				padding: auto;
+				padding: 0% 5% 5% 5%;
+			}
+		}
+		@media screen and (max-width: 480px) {
+			.spotlights > section > .content {
+				padding: 5% 5% 5% 5%;
 			}
 		}
 
@@ -3489,12 +3510,8 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			pointer-events: none;
-
-
 			/*COLOR DEL BANNER PRINCIPAL DEL INICIO*/
 			background-color: #572f57;	
-			
-
 			content: '';
 			display: block;
 			height: 100%;
@@ -3603,7 +3620,7 @@ input, select, textarea {
 		}
 		@media screen and (max-width: 736px) {
 			#banner {
-				padding: 30% 10% 0% 10%;
+				padding: 30% 5% 10% 5%;
 				height: auto;
 				margin-bottom: -2.75em;
 				max-height: none;
@@ -3624,17 +3641,19 @@ input, select, textarea {
 					height: auto;
 					min-height: 0;
 					max-height: none;
+					
 				}
 		}
 		@media screen and (max-width: 480px) {
 			#banner {
-				padding: 30% 15% 10% 15% ;
+				padding: 40% 5% 10% 5% ;
+				
 			}
 				#banner > .inner .content p br {
 					display: none;
 				}
 				#banner.major {
-					padding: 8em 0 4em 0 ;
+					padding: 40% 5% 5% 5%;
 				}
 		}
 
@@ -3670,8 +3689,14 @@ input, select, textarea {
 			}
 				@media screen and (max-width: 736px) {
 					#main > * > .inner {
-						padding: 5% 5% 5% 5% ;
-						width: calc(100% -1em);
+						padding: 10% 5% 10% 5% ;
+						width: calc(100%);
+					}
+				}
+				@media screen and (max-width: 420px) {
+					#main > * > .inner {
+						padding: 10% 5% 10% 5% ;
+						width: calc(100%);
 					}
 				}
 
@@ -3768,15 +3793,45 @@ input, select, textarea {
 					width: 100%;
 				}
 				#contact > .inner > .split > * {
-					padding: 3em 0 1em 0 ;
+					padding: 10% 5% 5% 5% ;
 				}
 				#contact > .inner > .split > :first-child:before {
 					display: block;
 				}
 		}
+		@media screen and (max-width: 420px) {
+			#contact > .inner {
+				display: block;
+			}
+				#contact > .inner > :nth-child(2n - 1) {
+					padding: 4em 0 2em 0 ;
+					border-right: 0;
+					width: 100%;
+				}
+				#contact > .inner > :nth-child(2n) {
+					padding-left: 0;
+					width: 100%;
+				}
+				#contact > .inner > .split > * {
+					padding: 10% 5% 5% 5% ;
+				}
+				#contact > .inner > .split > :first-child:before {
+					display: block;
+				}
+		}
+		@media screen and (max-width: 1280px) {
+			#contact > .inner > :nth-child(2n - 1) {
+				padding: 5% 2% 0% 2%;
+			}
+		}
 		@media screen and (max-width: 736px) {
 			#contact > .inner > :nth-child(2n - 1) {
-				padding: 3em 1em 1em 0 ;
+				padding: 10% 5% 0% 5%;
+			}
+		}
+		@media screen and (max-width: 420px) {
+			#contact > .inner > :nth-child(2n - 1) {
+				padding: 10% 5% 0% 5%;
 			}
 		}
 
@@ -3808,14 +3863,40 @@ input, select, textarea {
 				margin-left: 0;
 				padding-left: 0;
 			}
+			
+	@media screen and (max-width: 1280px) {
+		#footer{
+				margin: 0% 5% 0% 5%;
+					}
+			#footer .copyright li {
+				display: block;
+				border-left: 0;
+				line-height: inherit;
+				padding: 0% 0% 0% 0%;
+				}
+			}
+
+	@media screen and (max-width: 736px) {
+		#footer{
+			margin: 5% 5% 0% 5%;
+			}
+			#footer .copyright li {
+				display: block;
+				border-left: 0;
+				line-height: inherit;
+				padding: 0% 0% 0% 0%;
+				}
+			}
 	@media screen and (max-width: 480px) {
-		#footer .copyright li {
-			display: block;
-			border-left: 0;
-			margin-left: 0;
-			padding-left: 0;
-			line-height: inherit;
+		#footer{
+			margin: 10% 5% 0% 5%;
 		}
+			#footer .copyright li {
+				display: block;
+				border-left: 0;
+				line-height: inherit;
+				padding: 0% 0% 0% 0%;
+			}
 	}
 
 
