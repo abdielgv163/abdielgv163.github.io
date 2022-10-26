@@ -10,16 +10,14 @@
             <link rel="stylesheet" href="assets/css/noscript.css" />
         </noscript>
     
-        <!-- KATEX -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
-            integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"
-            integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja"
-            crossorigin="anonymous"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
-            integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
-            crossorigin="anonymous"></script>
-    </head>
+        <!-- KATEX LOCAL -->
+
+        <link href="/assets/katex/katex.css" rel="stylesheet" type="text/css">
+        <script defer src="/assets/katex/katex.js"></script>
+        <script defer src="/assets/katex/contrib/auto-render.js"
+        onload="renderMathInElement(document.body);"></script>
+
+        
 
 
 <body class="is-preload">
@@ -57,11 +55,250 @@
                                     </h1>
                                 </header>
                                 <p>
-                                    sasas
+                                    En esta ocasión vamos a explicar lo qué es el Web scraping, cómo nos puede ayudar a realizar recolecciones de datos automatizadas y cómo podemos implementar uno en Python con ayuda de algunas librerías interesantes que nos permitirán interactuar con el navegador. En particular, vamos a ver un programa que he realizado para automatizar la recolección de datos desde Google Maps para posteriormente, almacenar la información en <code>DataFrames</code> .
                                 </p>
+
                                 <div align="center">
-                                    <span class="image fit" ><img src="/images/blogImages/google/HGN0fhJ - Imgur.png" alt="" /></span>
+                                    <span class="image fit" >
+                                        <img src="/images/blogImages/google/HGN0fhJ - Imgur.png" alt="" />
+                                    </span>
                                 </div>
+
+
+                                <h2>¿Qué es el Web scraping?</h2>
+                                <p>
+                                    El <strong> web scraping o raspado web,</strong> es una técnica que nos permite automatizar la extracción de datos a través de sitios web utilizando software. Esta técnica trata de simular la navegación de un usuario en determinado sitio web, al interactuar con los elementos de la página, con los botones, las entradas de texto, etc. De manera que simule cómo sería una consulta manual con ventajas de velocidad y eficiencia.
+                                </p>
+
+                                <p>
+                                    El principal interés al realizar el Web scraping es, tomar los datos obtenidos del sitio web a partir del HTML (qué al final del día es información pública que ya está presente en la página en sí) obtengamos información relevante que podamos recuperar en forma de datos estructurados (formato de tabla) y almacenarlo en bases de datos; ya sea para almacenarlos o analizarlos. <br>
+                                    Esto puede ser de mucha utilidad en casos como por ejemplo, al comparar los precios de determinados productos de la competencia de un negocio, realizar búsquedas automatizadas para realizar una investigación o estudio, para entender un fenómeno, etc.
+                                </p>
+
+                                <p>
+                                    Esta es una herramienta muy interesante y que sin duda, puede ser de gran utilidad en diversos proyectos; pero no a todas las personas les parece que 3ros recopilen información de sus sitios para cualquier fin, por lo que también existen herramientas o técnicas <strong>anti-scraping</strong> que básicamente tratan de obstaculizar el proceso de recolección de una herramienta de scraping. Entre estas técnicas podría bloquearse directamente la consulta, generar datos aleatorios e inservibles una vez se detecta el scrapper, captchas, detección y control de IPs, etc.
+                                </p>
+
+                                <p>
+                                    Finalmente, hay que tener en consideración que si bien el web scraping NO es Ilegal, <Strong>
+                                        el proceso de realizar consultas automatizadas si podría ir en contra de los términos de uso de alguna plataforma en particular
+                                    </Strong>. Esta es una parte que aún carece de claridad en su legislación, por lo que cómo recomendación personal sugiero utilizar esta herramienta cómo medio para obtener datos para proyectos que manejen información poco sensible, pública y accesible desde otro medio. Y siempre ser transparente con la información recolectada y su uso.
+                                </p>
+
+                                <hr />
+                                <h1>Herramientas principales</h1>
+                                <h2>Selenium</h2>
+                                <p>
+                                    Nuestro protagonista para este proyecto será la herramienta-librería <code>Selenium</code>
+                                , el cuál es un entorno de pruebas de software para aplicaciones basadas en la Web. En particular, nos centraremos en <strong>Selenium WebDriver</strong>. La cual es una <strong>API</strong> que nos permite controlar el navegador de forma nativa a partir de un <strong>driver o controlador</strong>; cómo si lo estuviera utilizando un usuario humano, ya sea localmente o desde un servidor remoto.
+                                </p>
+                                <p>
+                                    Esta herramienta brinda soporte para la mayoría de los navegadores, pero recomiendo utilizar Chrome ya qué al ser el más popular, nos asegura de siempre tener compatibilidad con las herramientas y APIs que utilicemos; además de que está optimizado para utilizar los servicios de Google.
+                                </p>
+                                
+                                <div align="center">
+                                    <span class="image fit">
+                                        <img src="/images/blogImages/scrapp/selenium.jpg"/>
+                                    </span>
+                                </div>
+
+                                <h2>
+                                    Parsel
+                                </h2>
+                                <p>
+                                    Una librería que también es de mucha utilidad en este proyecto es <code>parsel</code>, la cual nos permite extraer datos de HTML y XML, mediante selectores <code>XPath</code> y CSS.
+                                    <br>
+                                    Básicamente utilizamos esta librería para aprovechar sus funciones de extracción de información a partir de sus etiquetas HTML, de manera que nos facilita la recolección de ciertos datos en particular sin importar en que elemento HTML se encuentren y a veces, sin necesidad de pasarle el XPath completo.
+                                </p>
+                                <hr \>
+                                
+
+
+                                <h1>Planeando el proceso </h1>
+                                <p>
+                                    Recordemos que el objetivo del scraper es de cierta forma, emular el comportamiento de un usuario en cierto sitio web, por lo que tendremos que interactuar con los elementos HTML de la página en cuestión.
+                                <br>
+                                Aquí será de gran ayuda la <strong>herramienta de desarrollador o DevTol</strong>  del navegador, a la que podemos acceder por medio de <code>CNTRL + SHIFT + I</code>.
+                                La herramienta de desarrollador nos permitirá visualizar la información contenida dentro de cada elemento del HTML y es justo desde aquí de dónde vamos a recopilar la información.
+                                </p>
+
+                                <div align="center">
+                                    <span class="image fit">
+                                        <img src="/images/blogImages/scrapp/devTool.png"/>
+                                    </span>
+                                </div>
+
+                                <p>
+                                <strong> Vamos a dividir el proceso de la recolección de datos en 2 partes</strong>:
+                                <ol>
+                                    <li><strong>1.</strong> 
+                                        Realizar búsqueda en Maps a partir de una entrada de texto, scrollear los resultados y almacenar los nombres y URLs de todos los resultados obtenidos.</li>
+                                    <li><strong>2.</strong>
+                                        Utilizar la información recopilada anteriormente para hacer una búsqueda <strong>ubicación por ubicación</strong> y obtener información más detallada de cada resultado. De manera que podamos recolectar datos como las estrellas, reviews, sitio web, horarios, etc.
+                                    </li>
+                                </ol>
+                                Este proceso se divide en 2 partes (y sacrificando tiempo) ya que al hacer diferentes búsquedas se van a obtener diferente cantidad de resultados, lo que altera el HTML y hace más difícil su manejo desde el scraper, complicando el proceso de obtener información desde el XPath.
+                                <br>
+                                Por ello, al realizar las operaciones por separado, resultado por resultado; siempre vamos a obtener un sitio web con elementos HTML fijos conteniendo siempre la misma información en el mismo lugar, facilitando la recolección.
+                                Esto quedará más claro más adelante.
+                                </p>
+                                <hr />
+
+
+
+                                <h1>Instalando Librerías (en la consola o bash)</h1>
+                                <p>
+                                    Lo primero que debemos de hacer es instalar las librerías necesarias para este proyecto. Recomiendo utilizar <strong>entornos virtuales</strong> con <code>virtualenv</code> para manejar nuestras librerías y evitar posibles conflictos de incompatibilidad. Estaremos utilizando el gestor de paquetes <code>PIP</code> de Python.
+                                </p>
+
+                                <pre><code class="language-bash" data-prismjs-copy="copy">
+# Proporciona el Driver
+pip install selenium
+
+# Obtener información del sitio
+pip install parsel
+
+# Crear DataFrames para estructurar los datos
+pip install pandas
+                                </code></pre>
+                                <hr />
+
+
+                                
+                                <h1>1ra Parte:
+                                <br>Obteniendo los nombres y URLs de las ubicaciones</h1>
+                                <p>Teniendo en mente la idea de que queremos "imitar" el comportamiento habitual de un usuario al utilizar un sitio web, tenemos que establecer cada uno de los pasos que se van a ejecutar al momento de interactuar con el sitio. 
+                                <br>Los pasos que vamos a seguir son los siguientes:
+                                </p>
+                                
+                                
+                                <ol>
+                                    <li>1. Abrir el navegador</li>
+                                    <li>2. Entrar a Google Maps</li>
+                                    <li>3. Posicionarnos en el cuadro de búsqueda</li>
+                                    <li>4. Ingresar la búsqueda en texto</li>
+                                    <li>5. Ejecutar la búsqueda</li>
+                                    <li>6. Posicionarnos en la sección de resultados</li>
+                                    <li>7. Hacer scroll hacia abajo hasta agotar los resultados</li>
+                                    <li>8. Almacenar la información</li>
+                                </ol>
+                                
+                                <p>
+                                    Ahora sí, podemos proceder a construir el programa. 
+                                </p>
+
+                                
+                                
+                                <h2>Importando librerías</h2>
+                                <p>
+                                <pre><code class="language-py" data-prismjs-copy="copy">
+# Para pausar el programa unos segundos
+import time 
+# DataFrames
+import pandas as pd
+#Obtener Informacion del sitio rapidamente
+from parsel import Selector
+# Driver se Selenium y Chrome
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+                                </code></pre>
+                                </p>
+
+
+                                <h2>Asignar e inicializar el WebDriver</h2>
+                                <p>
+                                    Para este programa vamos a "empaquetar" todas las funciones de la primera parte, por lo que vamos a estar trabajando con una <strong>clase</strong> que vamos a dotar de ciertos atributos y métodos.<br>
+                                    Comenzamos por crear el inicializador, y es aquí donde agregaremos nuestro driver para Chrome. 
+                                </p>
+                                <p>
+                                    Para más informmación consultar la  <a href="https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/"><u>documentación</u>.</a>
+                                    <pre><code class="language-py" data-prismjs-copy="copy">
+class googleMapsScraper:
+
+    def __init__(self): 
+    #Inicializar el Driver
+    driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+    self.driver = driver
+                                        </code></pre>
+                                </p>
+
+                                <h2>Abrir el navegador en Google Maps</h2>
+                                <p>
+                                    Una vez ya tenemos el driver listo, vamos a crear un método <code>run()</code> que  es el encargado de hacer que nuestro navegador se abra y ejecutar el resto de métodos.<br>
+                                    <br>Podemos abrir el navegador en una URL en particular gracias a la instrucción <code>driver.get(url)</code> y al tratarse de un programa diseñado específicamente para Google Maps, pues le pasamos la URL desde un inicio.
+                                    <br><br>
+                                    Una vez abrimos el navegador en el sitio de GMaps, esperamos 2 segundos y procedemos a ejecutar el método <code>searchPlaces()</code> que explicaremos a continuación.
+                                <pre><code class="language-py" data-prismjs-copy="copy">  
+def run(self, stringSearch):
+    self.driver.get('https://www.google.com/maps')
+    time.sleep(2)
+    data = self.searchPlaces(stringSearch)
+    return(data)
+                                </code></pre>     
+                                </p>
+
+
+
+
+                                <h2>Realizar la búsqueda</h2>
+
+                                <p>
+                                    Ahora vamos a crear el método <code>searchPlaces()</code> que recibe como parámetro una entrada de texto, esta será la que ingresaremos en el cuadro de búsqueda, pero primero necesitamos encontrar cuál es dicho elemento. Por lo que nos vamos a la herramienta de desarrollador con <code>CTRL+SHIFT+I</code>, luego seleccionamos la herramienta de inspección con <code>CTRL+SHIFT+C</code> y damos click en el recuadro de búsqueda.
+                                    <br>
+                                    Una vez lo realizamos vamos a ver lo siguiente:
+                                    <div align="center">
+                                        <span class="image fit">
+                                            <img src="/images/blogImages/scrapp/searchbox.png"/>
+                                        </span>
+                                    </div>
+                                </p>
+
+
+                                <p>
+                                Si nos vamos a la información de ese elemento HTMl vamos a ver mucha información, pero en particular tenemos lo siguiente:
+                                <pre><code class="language-html" ></code>
+aria-label="Buscar en Google Maps"
+id="searchboxinput" 
+class="tactile-searchbox-input" outline: none;"
+                                </code></pre>
+                                Por lo que podemos encontrar ese elemento HTML buscándolo a través de su <code> class name, id, aria-label</code>, etc.
+                                </p>
+
+                                <p> 
+                                <br>
+                                1. En este caso vamos a usar el<code>Class Name</code>.
+                                Y lo vamos a ubicar con ayuda del método <code>find_element(By.CLASS_NAME, )</code> y después lo vamos a almacenar en una variable.
+                                <br>
+                                </p>
+                                <p>
+                                2. Después tenemos que ingresar nuestro input de texto en el recuadro de búsqueda, esto lo logramos con ayuda del método <code>.send_keys()</code> 
+                                </p>
+
+                                <p> 
+                                3. Luego, con ayuda de la herramienta de inspección; vamos a encontrar el elemento correspondiente al botón de "buscar" y copiaremos su <code>XPATH</code>. Y nuevamente utilizando el método <code>.find_element(By.XPATH)</code> lo guardaremos en una variable.
+                                </p>
+
+                                <p>
+                                4. Finalmente presionamos click en el botón de "Buscar" para concretar la búsqueda.
+                                <pre><code class="language-py" data-prismjs-copy="copy"></code>
+searchText = self.driver.find_element(By.CLASS_NAME, "tactile-searchbox-input")
+searchText.send_keys(stringSearch)
+searchButton = self.driver.find_element(By.XPATH, '//html//body//div[3]//div[9]//div[3]//div[1]//div[1]//div[1]//div[2]//div[1]//button')
+searchButton.click()
+                                </code></pre>
+                                Lo que hemos logrado hasta ahora es abrir el navegador, ingresar el texto de la búsqueda y ejecutar.
+                                </p>
+
+
+
+                                    
+
+
 
 
 
@@ -98,8 +335,8 @@
     <script src="js/util.js"></script>
     <script src="js/main.js"></script>
     <script src="prism/prism.js"></script>
-    <!-- Scripts de KATEX -->
-    <script src="js/renderMath.js"></script>
+
+
 
 </body>
 </html>
