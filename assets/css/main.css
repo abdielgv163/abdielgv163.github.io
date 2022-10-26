@@ -2869,7 +2869,7 @@ input, select, textarea {
 			}
 			.tiles article:after {
 				/*COLOR DE LOS CUADROS AL POSICIONAR EL MOUSE*/
-				background-color: #8e8e8e;
+				background-color: #5d5d5d;
 				content: '';
 				display: block;
 				height: 100%;
@@ -2924,11 +2924,13 @@ input, select, textarea {
 				height: 30vh;
 				max-height: 30em;
 				min-height: 20em;
+				background-color: #5d5d5d;
 			}
 		}
 		@media screen and (max-width: 980px) {
 			.tiles article {
 				width: 50% !important;
+				background-color: #5d5d5d;
 			}
 		}
 		@media screen and (max-width: 736px) {
@@ -2937,6 +2939,7 @@ input, select, textarea {
 				height: 16em;
 				max-height: none;
 				min-height: 0;
+				background-color: #5d5d5d;
 			}
 				.tiles article h3 {
 					font-size: 1.5em;
@@ -2949,6 +2952,7 @@ input, select, textarea {
 				.tiles article {
 					height: 20em;
 					width: 100% !important;
+					background-color: #5d5d5d;
 				}
 		}
 
