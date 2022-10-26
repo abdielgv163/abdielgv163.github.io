@@ -6,42 +6,41 @@
     <title>Blog</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/blog.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="prism/prism_dark.css" />
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
-
-    <!-- KATEX -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
-        integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"
-        integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
-        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
-        crossorigin="anonymous"></script>
+    <!-- KATEX LOCAL -->
+    <link href="/assets/katex/katex.css" rel="stylesheet" type="text/css">
+    <script defer src="/assets/katex/katex.js"></script>
+    <script defer src="/assets/katex/contrib/auto-render.js"
+    onload="renderMathInElement(document.body);"></script>
 </head>
 
 
 
-<body class="is-preload">
+<body class="style6">
     <div id="wrapper">
-        <header id="header" class="alt style1">
+
+
+        <header id="header" class="alt style6">
             <a href="index.html" class="logo"><strong>Volver al Inicio</strong> <span>Portafolio</span></a>
             <nav>
                 <a href="#menu">Menú</a>
             </nav>
         </header>
+
+
         <!-- Menu -->
-        <nav id="menu">
+        <nav id="menu" class="style6">
             <ul class="actions stacked">
                 <li><a href="index.html" class="button fit">Home</a></li>
                 <li><a href="aboutme.html" class="button fit">Sobre mí</a></li>
                 <li><a href="ia.html" class="button fit">IA y Data Science</a></li>
                 <li><a href="quantum.html" class="button fit">Quantum Computing</a></li>
                 <li><a href="blog.html" class="button fit">Blog</a></li>
-                <li><a href="https://github.com/abdielgv163" class="button primary fit">GitHub</a></li>
+                <li><a href="https://github.com/abdielgv163" class="button style6 primary fit">GitHub</a></li>
             </ul>
         </nav>
 
@@ -49,11 +48,8 @@
 
         <!-- Banner -->
         <!-- Note: The "styleN" class below should match that of the header element. -->
-        <section id="banner" class="style1">
+        <section id="banner" class="style6">
             <div class="inner">
-                <span class="image">
-                    <img src="images/pic01.jpg" alt="" />
-                </span>
                 <header class="major">
                     <h1>Blog 📓 📝</h1>
                 </header>
@@ -67,13 +63,16 @@
 
 
         <!-- Main -->
-        <div id="main" class="alt">
+        <div id="main" class="style6">
 
             <section id="one">
+
                 <div class="inner2">
                     <header class="major">
                         <h1>Explorar</h1>
                     </header>
+
+
                     <div class="row">
                         <div class="col-6 col-12-small">
                             <hr />
@@ -102,6 +101,34 @@
                         </div>
                     </div>
 
+                
+                    <div class="row">
+                        <div class="col-6 col-12-small">
+                            <hr />
+                            <h3>Configuración de Git y Github en Linux</h3>
+                            <span class="image fit"><img src="/images/blogImages/git/GitGithub.png" alt="" /></span>
+                            <p>
+                                Guía rápida sobre los sistemas de control de versiones, GIT, GitHub y como configurar nuestro entorno de trabajo en Windows y Linux para comenzar a utilizar estas herramientas.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="/blogsSection/gitGithub.html" class="button small">Leer</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-12-small">
+                            <hr />
+                            <h3>Creando un Scraper para Google Maps</h3>
+                            
+                            <span class="image fit"><img src="/images/blogImages/google/HGN0fhJ - Imgur.png"/></span>
+                            
+                            <p>
+                                En este articulo se explica más a detalle mi programa de Google Maps Scraper y cómo es que se logra interactuar con el navegador para recopilar información utilizando <code>selenium</code> y <code>parsel</code>. Así como también se explica la creación de los <code>DataFrames</code>.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="/blogsSection/googleScrapBlog.html" class="button small">Leer</a></li>
+                            </ul>
+                        </div>
+                    </div>
 
                     
                     </div>
@@ -124,8 +151,8 @@
                                 class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
                     </ul>
                     <ul class="copyright">
-                        <li>&copy; El diseño del sitio web no es de mi autoridad</li>
-                        <li>Diseño: Forty By: <a href="https://html5up.net">HTML5 UP</a></li>
+                        <li>&copy; El diseño de este sitio ha sido creado a partir de una plantilla</li>
+                        <li>Diseño Original: Forty By: <a href="https://html5up.net">HTML5 UP</a></li>
                     </ul>
                 </div>
             </footer>
@@ -140,8 +167,6 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
-        <!-- Scripts de KATEX -->
-        <script src="assets/js/renderMath.js"></script>
 
 </body>
 

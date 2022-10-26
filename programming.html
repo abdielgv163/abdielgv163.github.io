@@ -5,26 +5,15 @@
     <title>Portafolio de Programación</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/programming.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="prism/prism_dark.css"/>
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
-
-    <!-- KATEX -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
-        integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"
-        integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
-        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
-        crossorigin="anonymous"></script>
-
 </head>
 
-<body class="is-preload">
 
+<body class="style2">
     <!-- Wrapper -->
     <div id="wrapper">
         <!-- Header -->
@@ -39,14 +28,14 @@
 
 
         <!-- Menu -->
-        <nav id="menu">
+        <nav id="menu" class="style2">
             <ul class="actions stacked">
                 <li><a href="index.html" class="button fit">Home</a></li>
                 <li><a href="aboutme.html" class="button fit">Sobre mí</a></li>
                 <li><a href="ia.html" class="button fit">IA y Data Science</a></li>
                 <li><a href="quantum.html" class="button fit">Quantum Computing</a></li>
                 <li><a href="blog.html" class="button fit">Blog</a></li>
-                <li><a href="https://github.com/abdielgv163" class="button primary fit">GitHub</a></li>
+                <li><a href="https://github.com/abdielgv163" class="button style2 primary fit">GitHub</a></li>
             </ul>
         </nav>
 
@@ -56,9 +45,6 @@
         <!-- Note: The "styleN" class below should match that of the header element. -->
         <section id="banner" class="style2">
             <div class="inner">
-                <span class="image">
-                    <img src="images/pic01.jpg" alt="" />
-                </span>
                 <header class="major">
                     <h1>Portafolio de Programación 💻</h1>
                 </header>
@@ -71,9 +57,11 @@
 
 
         <!-- Main -->
-        <div id="main">
+        <div id="main" class="style2">
+
+
             <!-- One -->
-            <section id="one">
+            <section id="one" class="style2">
                 <div class="inner">
                     <header class="major">
                         <h2>Sección: Programación</h2>
@@ -85,9 +73,10 @@
                 </div>
             </section>
 
-            <!-- Two -->
 
-            <section id="two" class="spotlights">
+
+            <!-- Two -->
+            <section id="two" class="spotlights style2">
 
                 <section>
                     <a class="image">
@@ -105,14 +94,37 @@
                             </p>
                             <p>
                                 Este proyecto ha sido realizado con la ayuda de librerías como <code>pandas</code>, <code>parsel</code> y <code>selenium</code>.
-                            </p>
-                            
+                            </p> 
                                 <ul class="actions">
                                     <li><a href="/blogsSection/googleScrapBlog.html" class="button fit small">Accede al articulo del proyecto</a></li>
                                     <li><a href="https://github.com/abdielgv163/GoogleMaps_Scrap" class="button fit small">Accede al proyecto en GitHub</a></li>
-                                </ul>
-                            
-                            
+                                </ul> 
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
+                    <a class="image">
+                        <img src="images/ia/GMaps.png"  style="border-radius: 15px;" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Proyecto <br>Google Maps Scraper</h3>
+                            </header>
+                            <p>
+                                Herramienta desarrollada para facilitarme la recolección de datos desde Google Maps, 
+                                esto con la finalidad de generar <code>DataFrames</code> de forma automatizada para mis proyectos personales de Data Science. <br>
+                                La información que se puede recopilar con esta herramienta son: <i> el nombre del lugar, URL, dirección, estrellas, total de reviews, sitio web, teléfono y horarios</i>. 
+                            </p>
+                            <p>
+                                Este proyecto ha sido realizado con la ayuda de librerías como <code>pandas</code>, <code>parsel</code> y <code>selenium</code>.
+                            </p> 
+                                <ul class="actions">
+                                    <li><a href="/blogsSection/googleScrapBlog.html" class="button fit small">Accede al articulo del proyecto</a></li>
+                                    <li><a href="https://github.com/abdielgv163/GoogleMaps_Scrap" class="button fit small">Accede al proyecto en GitHub</a></li>
+                                </ul> 
                         </div>
                     </div>
                 </section>

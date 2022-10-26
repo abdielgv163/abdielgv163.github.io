@@ -267,26 +267,26 @@ git --version
     <strong>2. En la terminal de GIT</strong><br>
     Vamos a actualizar la información general de nuestro usuario (TENER CUIDADO CON LOS ESPACIOS):
     <pre><code class="language-bash" data-prismjs-copy="copy">
-        # Actualizamos el nombre de nuestro usuarios de GitHub
-        git config --global user.name "nombre_de_usuario_GitHub"
+# Actualizamos el nombre de nuestro usuarios de GitHub
+git config --global user.name "nombre_de_usuario_GitHub"
         
-        # Configuramos el correo electrónico asociado a la cuenta de GitHub
-        git config --global user.email "email_de_la_cuenta" 
+# Configuramos el correo electrónico asociado a la cuenta de GitHub
+git config --global user.email "email_de_la_cuenta" 
         
-        # Verificamos que la información sea correcta
-        git config --list
+# Verificamos que la información sea correcta
+git config --list
         </code></pre>
 </ol>
 <ol>
     <strong>3. (Opcional) Cambiar la rama predeterminada de nuestro entorno local</strong><br>
     
     <pre><code class="language-bash" data-prismjs-copy="copy">
-        # A mí me gusta usar la rama master, por costumbre
-        config --global init.defaultBranch master
+# A mí me gusta usar la rama master, por costumbre
+config --global init.defaultBranch master
 
-        # Otra opción
-        config --global init.defaultBranch main
-        </code></pre>
+# Otra opción
+config --global init.defaultBranch main
+</code></pre>
 </ol>
 
 <h2>
@@ -300,9 +300,9 @@ git --version
     <ol>
     <strong>1. Procedemos a crear nuestras llaves:</strong>
         <pre><code class="language-bash" data-prismjs-copy="copy">
-        # Genera llaves SSH utilizando el protocolo de encriptación RSA 
-        # Con 4096 bits de longitud
-        ssh-keygen -t rsa -b 4096 -C Tu_Correo_Electronico_De_Gitub
+# Genera llaves SSH utilizando el protocolo de encriptación RSA 
+# Con 4096 bits de longitud
+ssh-keygen -t rsa -b 4096 -C Tu_Correo_Electronico_De_Gitub
         </code></pre>
     </ol>
     <ol>
@@ -321,17 +321,17 @@ git --version
         </strong>
         Verificamos que todo se este realizando con normalidad y ejecutamos el siguiente comando:
         <pre><code class="language-bash" data-prismjs-copy="copy">
-            eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)"
         </code></pre>
         Y vamos a obtener una salida similar a la siguiente:
         <pre><code class="language-bash" data-prismjs-copy="copy">
-            Agent pid #####
+Agent pid #####
         </code></pre>
     </ol>
     <ol>
         <strong>5. Agregamos la llave privada al servidor SSH</strong>
         <pre><code class="language-bash" data-prismjs-copy="copy">
-            ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa
         </code></pre>
         
     </ol>
@@ -357,11 +357,11 @@ git --version
     <br>
     Una vez estamos en la consola, vamos a instalar una herramienta que nos ayudará a copiar nuestra llave de manera segura. Para ello ejecutaremos el siguiente comando:
     <pre><code class="language-bash" data-prismjs-copy="copy">
-        sudo apt install xclip
+sudo apt install xclip
     </code></pre>
     Y una vez tenemos instalada esta herramienta, ejecutamos el siguiente comando para copiar nuestra llave al portapapeles:
     <pre><code class="language-bash" data-prismjs-copy="copy">
-        xclip -selection clipboard < ~/.ssh/id_rsa.pub
+xclip -selection clipboard < ~/.ssh/id_rsa.pub
     </code></pre>
     En caso de querer hacerlo manual, debemos de ir a la carpeta en la que se encuentra nuestra llave. Si la mantuvimos por defecto, la ruta será <code> ~/.ssh/id_rsa.pub</code>.
     <br>
