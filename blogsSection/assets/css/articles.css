@@ -2166,6 +2166,9 @@ input, select, textarea {
 				.image.main {
 					margin: 1.5em 0;
 				}
+				.image.fit{
+					width: 100%;
+				}
 			}
 
 
@@ -2989,20 +2992,20 @@ input, select, textarea {
 				}
 		@media screen and (max-width: 1680px) {
 			.spotlights > section > .image {
-				width: 40%;
+				width: 90%;
 				
 			}
 			.spotlights > section > .content {
-				width: 60%;
+				width: 90%;
 			}
 		}
 		@media screen and (max-width: 1280px) {
 			.spotlights > section > .image {
-				width: 45%;
+				width: 90%;
 				
 			}
 			.spotlights > section > .content {
-				width: 55%;
+				width: 100%;
 			}
 		}
 		@media screen and (max-width: 980px) {
@@ -3013,13 +3016,13 @@ input, select, textarea {
 					width: 100%;
 				}
 				.spotlights > section > .content {
-					padding: 4em 3em 2em 3em ;
+					padding: 0 1% 0 1%;
 					width: 100%;
 				}
 		}
 		@media screen and (max-width: 736px) {
 			.spotlights > section > .content {
-				padding: 3em 1.5em 1em 1.5em ;
+				padding: 0 1% 0 1%;
 			}
 		}
 
@@ -3625,14 +3628,14 @@ input, select, textarea {
 	}
 	@media screen and (max-width: 736px) {
 		#wrapper>*>.inner {
-			padding: 0% 3% 0% 3%;
+			padding: 0% 0.5% 0% 0.5%;
 			width: calc(100%);
 		}
 	}
 	@media screen and (max-width: 736px) {
 		#wrapper {
-			padding-top: 2.75em;
-			padding: 0% 3% 0% 3%;
+
+			padding:  0% 0.5% 0% 0.5%;
 		}
 	}
 

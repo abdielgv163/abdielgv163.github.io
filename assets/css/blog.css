@@ -1892,6 +1892,9 @@ input, select, textarea {
 				.image.main {
 					margin: 1.5em 0;
 				}
+				.image.fit{
+					width: 100%;
+				}
 			}
 
 
@@ -1905,7 +1908,7 @@ input, select, textarea {
 	ul.icons {
 		cursor: default;
 		list-style: none;
-		padding-left: 0;
+		padding: 2% 3% 0% 3%;
 	}
 		ul.icons li {
 			display: inline-block;
@@ -2443,7 +2446,7 @@ input, select, textarea {
 /*     CONTACT METHOD       */
 
 	.contact-method {
-		margin: 0 0 2em 0;
+		margin: 10% 0 2em 0;
 		padding-left: 3.25em;
 		position: relative;
 	}
@@ -2598,7 +2601,7 @@ input, select, textarea {
 				}
 		@media screen and (max-width: 1680px) {
 			.spotlights > section > .image {
-				width: 40%;
+				width: 80%;
 				
 			}
 			.spotlights > section > .content {
@@ -2987,7 +2990,7 @@ input, select, textarea {
 			-webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease, -webkit-filter 0.5s ease;
 			-ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
 			transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
-			padding: 0 !important;
+			padding: 0% 5% 0% 5% !important;
 			position: relative;
 			z-index: 2;
 		}
@@ -3138,24 +3141,24 @@ input, select, textarea {
 			}
 				@media screen and (max-width: 736px) {
 					#main > * > .inner {
-						padding: 3em 0 1em 0 ;
-						width: calc(100% - 3em);
+						padding: 5% 5% 5% 5% ;
+						width: calc(100% -1em);
 					}
 				}
 
 			#main > * > .inner2 {
 				border-top: solid 1px rgb(255, 255, 255);
-				padding: 5% 10% 5% 10% ;
+				padding: 5% 5% 5% 5% ;
 				margin: 0 auto;
 				max-width: 100%;
-				width: calc(100%);
+				width: calc(100%-1em);
 				background-color: #3f2b41;
 				border-bottom: solid 1px rgb(255, 255, 255);
 			}
 				@media screen and (max-width: 1080px) {
 					#main > * > .inner2 {
-						padding: 5% 10% 5% 10% ;
-						width: calc(100%);
+						padding: 5% 5% 5% 5% ;
+						width: calc(100%-1em);
 					}
 				}
 		#main.alt {
@@ -3256,10 +3259,13 @@ input, select, textarea {
 
 
 /*      FOOTER      */
+#footer{
+	padding: 0% 0% 0 3% ;
+}
 #footer .copyright {
 	font-size: 1em;
 	list-style: none;
-	padding-left: 0;
+	padding: 5% 0 0% 0;
 	
 }
 	#footer .copyright li {	
@@ -3278,6 +3284,9 @@ input, select, textarea {
 			padding-left: 0;
 		}
 @media screen and (max-width: 480px) {
+	#footer{
+		padding: 10% 5% 0 5% ;
+	}
 	#footer .copyright li {
 		display: block;
 		border-left: 0;
@@ -3310,17 +3319,17 @@ input, select, textarea {
 		padding: 4em 0 2em 0;
 		margin: 0 auto;
 		max-width: 65em;
-		width: calc(100% - 6em);
+		width: calc(100%);
 	}
 	@media screen and (max-width: 736px) {
 		#wrapper>*>.inner {
-			padding: 3em 0 1em 0;
-			width: calc(100% - 3em);
+			padding: 0 .5% 0 .5%;
+			width: calc(100%);
 		}
 	}
 	@media screen and (max-width: 736px) {
 		#wrapper {
-			padding-top: 2.75em;
+			padding: 0 .5% 0 .5%;
 		}
 	}
 
