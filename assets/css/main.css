@@ -3659,23 +3659,6 @@ input, select, textarea {
 
 
 		@media screen and (max-width: 1280px) {
-			body.is-preload #banner > .inner {
-				-moz-filter: blur(0.1em);
-				-webkit-filter: blur(0.1em);
-				-ms-filter: blur(0.1em);
-				filter: blur(0em);
-				-moz-transform: translateX(5em);
-				-webkit-transform: translateX(5em);
-				-ms-transform: translateX(0em);
-				transform: translateX(0em);
-				opacity: 0;
-			}
-		}
-
-
-
-
-		@media screen and (max-width: 1280px) {
 			#banner {
 				background-attachment: scroll;
 				padding: 5% 10% 0% 10%;
