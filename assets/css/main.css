@@ -133,6 +133,7 @@ input, select, textarea {
 			-ms-transition: none !important;
 			transition: none !important;
 		}
+		
 
 
 
@@ -3443,7 +3444,7 @@ input, select, textarea {
 
 
 		body.is-preload #header.alt {
-			opacity: 0;
+			opacity: 1;
 		}
 		@media screen and (max-width: 1680px) {
 			#header nav a[href="#menu"] {
@@ -3651,9 +3652,29 @@ input, select, textarea {
 			-moz-transform: translateX(-0.5em);
 			-webkit-transform: translateX(-0.5em);
 			-ms-transform: translateX(-0.5em);
-			transform: translateX(-0.5em);
+			transform: translateX(-1em);
 			opacity: 0;
 		}
+
+
+
+		@media screen and (max-width: 1280px) {
+			body.is-preload #banner > .inner {
+				-moz-filter: blur(0.1em);
+				-webkit-filter: blur(0.1em);
+				-ms-filter: blur(0.1em);
+				filter: blur(0em);
+				-moz-transform: translateX(5em);
+				-webkit-transform: translateX(5em);
+				-ms-transform: translateX(0em);
+				transform: translateX(0em);
+				opacity: 0;
+			}
+		}
+
+
+
+
 		@media screen and (max-width: 1280px) {
 			#banner {
 				background-attachment: scroll;
