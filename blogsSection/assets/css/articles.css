@@ -103,7 +103,7 @@ input, select, textarea {
 	
 	/*COLOR DEL CUERPO DEL DOCUMENTO*/
 	body {
-		background: #322238;
+		background: #271e2a;
 	}
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;

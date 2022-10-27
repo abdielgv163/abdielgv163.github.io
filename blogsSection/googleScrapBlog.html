@@ -134,12 +134,12 @@
                                     <li><strong>1.</strong> 
                                         Realizar búsqueda en Maps a partir de una entrada de texto, scrollear los resultados y almacenar los nombres y URLs de todos los resultados obtenidos.</li>
                                     <li><strong>2.</strong>
-                                        Utilizar la información recopilada anteriormente para hacer una búsqueda <strong>ubicación por ubicación</strong> y obtener información más detallada de cada resultado. De manera que podamos recolectar datos como las estrellas, reviews, sitio web, horarios, etc.
+                                        Utilizar la información recopilada anteriormente para hacer una segunda búsqueda <strong>ubicación por ubicación</strong> y obtener información más detallada de cada resultado. De manera que podamos recolectar datos particulares como las estrellas, reviews, sitio web, horarios, etc.
                                     </li>
                                 </ol>
-                                Este proceso se divide en 2 partes (y sacrificando tiempo) ya que al hacer diferentes búsquedas se van a obtener diferente cantidad de resultados, lo que altera el HTML y hace más difícil su manejo desde el scraper, complicando el proceso de obtener información desde el XPath.
+                                Este proceso se divide en 2 partes (y sacrificando algo de tiempo) ya que al hacer diferentes búsquedas se van a obtener diferente cantidad de resultados, lo que altera el HTML y hace más difícil su manejo desde el scraper, complicando el proceso de obtener información desde el XPath.
                                 <br>
-                                Por ello, al realizar las operaciones por separado, resultado por resultado; siempre vamos a obtener un sitio web con elementos HTML fijos conteniendo siempre la misma información en el mismo lugar, facilitando la recolección.
+                                Por ello, al realizar las operaciones por separado, resultado por resultado; siempre vamos a obtener un sitio web con <strong>elementos HTML fijos </strong>  conteniendo siempre la misma información en el mismo lugar, facilitando la recolección.
                                 Esto quedará más claro más adelante.
                                 </p>
                                 <hr />
@@ -151,7 +151,7 @@
                                     Lo primero que debemos de hacer es instalar las librerías necesarias para este proyecto. Recomiendo utilizar <strong>entornos virtuales</strong> con <code>virtualenv</code> para manejar nuestras librerías y evitar posibles conflictos de incompatibilidad. Estaremos utilizando el gestor de paquetes <code>PIP</code> de Python.
                                 </p>
 
-                                <pre><code class="language-bash" data-prismjs-copy="copy">
+<pre><code class="language-bash" data-prismjs-copy="copy">
 # Proporciona el Driver
 pip install selenium
 
@@ -160,12 +160,12 @@ pip install parsel
 
 # Crear DataFrames para estructurar los datos
 pip install pandas
-                                </code></pre>
+</code></pre>
                                 <hr />
 
 
                                 
-                                <h1>1ra Parte:
+                                <h1>Primera Parte:
                                 <br>Obteniendo los nombres y URLs de las ubicaciones</h1>
                                 <p>Teniendo en mente la idea de que queremos "imitar" el comportamiento habitual de un usuario al utilizar un sitio web, tenemos que establecer cada uno de los pasos que se van a ejecutar al momento de interactuar con el sitio. 
                                 <br>Los pasos que vamos a seguir son los siguientes:
@@ -224,10 +224,10 @@ class googleMapsScraper:
     #Inicializar el Driver
     driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
     self.driver = driver
-                                        </code></pre>
+                                    </code></pre>
                                 </p>
 
-                                <h2>Abrir el navegador en Google Maps</h2>
+                                <h2>Abrir Google Maps en el navegador</h2>
                                 <p>
                                     Una vez ya tenemos el driver listo, vamos a crear un método <code>run()</code> que  es el encargado de hacer que nuestro navegador se abra y ejecutar el resto de métodos.<br>
                                     <br>Podemos abrir el navegador en una URL en particular gracias a la instrucción <code>driver.get(url)</code> y al tratarse de un programa diseñado específicamente para Google Maps, pues le pasamos la URL desde un inicio.
@@ -261,11 +261,19 @@ def run(self, stringSearch):
 
                                 <p>
                                 Si nos vamos a la información de ese elemento HTMl vamos a ver mucha información, pero en particular tenemos lo siguiente:
-                                <pre><code class="language-html" ></code>
+                                </p>
+
+
+                                <p>
+                                <pre><code class="language-html">
 aria-label="Buscar en Google Maps"
 id="searchboxinput" 
 class="tactile-searchbox-input" outline: none;"
                                 </code></pre>
+                                </p>
+
+
+                                <p>
                                 Por lo que podemos encontrar ese elemento HTML buscándolo a través de su <code> class name, id, aria-label</code>, etc.
                                 </p>
 
@@ -284,22 +292,276 @@ class="tactile-searchbox-input" outline: none;"
                                 </p>
 
                                 <p>
-                                4. Finalmente presionamos click en el botón de "Buscar" para concretar la búsqueda.
-                                <pre><code class="language-py" data-prismjs-copy="copy"></code>
+                                4. Finalmente presionamos click en el botón de "Buscar" para concretar la búsqueda y esperamos unos segundos con <code>time.sleep()</code> .
+                                </p>
+
+                                <pre><code class="language-py" data-prismjs-copy="copy">
 searchText = self.driver.find_element(By.CLASS_NAME, "tactile-searchbox-input")
 searchText.send_keys(stringSearch)
 searchButton = self.driver.find_element(By.XPATH, '//html//body//div[3]//div[9]//div[3]//div[1]//div[1]//div[1]//div[2]//div[1]//button')
 searchButton.click()
+time.sleep(5)
                                 </code></pre>
-                                Lo que hemos logrado hasta ahora es abrir el navegador, ingresar el texto de la búsqueda y ejecutar.
+                                <p></p>
+                                Lo que hemos logrado hasta ahora es abrir el navegador, ingresar el texto y realizar la búsqueda.
                                 </p>
 
+                                <h2>Ubicando el cuadro de resultados y obtener la información relevante</h2>
+                                <p>Lo siguiente que tenemos que hacer es ubicar el cuadro que contiene los resultados, ya que de ahí sacaremos la información. Nuevamente vamos a ubicar este recuadro con ayuda de la herramienta de inspección y vamos a copiar su XPATH para almacenarlo en una variable</p>
+
+                                <p><pre><code class="language-py" data-prismjs-copy="copy">
+# Ubicando elementos de la página 
+resultsBox= self.driver.find_element(By.XPATH, "/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]/div[1]")
+                                </code></pre></p>
+
+                                <p>Nos vamos a apoyar de una funcionalidad del WebDriver llamada <strong>ActionChains</strong>, que posteriormente nos ayudará a interactuar con el navegador. Y de el método <code>self.driver.page_source</code> para obtener la información del navegador.
+                                </p>
+
+                                <p><pre><code class="language-py" data-prismjs-copy="copy">
+# Acciones dentro del navegador
+action = ActionChains(self.driver
+                                </code></pre></p>
+
+                                <p><pre><code class="language-py" data-prismjs-copy="copy">
+# Obteniendo contenido de la pagina inicial
+page_content = self.driver.page_source 
+                                </code></pre></p>
+
+                                <p> Ahora vamos a crear la lógica para esperar a que se muestren los resultados, movernos a dicha caja de resultados, obtener el contenido de la página, determinar la cantidad de resultados y bajar el scroll hasta que dejen de salir resultados nuevos.
+                                <pre><code class="language-py" data-prismjs-copy="copy">
+initial_len = 0
+while(resultsBox.is_displayed() == True):
+    # Obteniendo contenido de la pagina inicial
+    page_content = self.driver.page_source 
+    response = Selector(page_content) 
+    initial_len = (len(response.xpath('//div[contains(@aria-label, "Resultados de")]/div/div[./a]'))) 
 
 
-                                    
+    # Para darle tiempo de actualizar busquedas y evitar que se traslapen
+    for i in range(5): 
+        time.sleep(1) 
+        resultsBox.send_keys(Keys.PAGE_DOWN) # Scroll hacia abajo
+        
+
+    # Obteniendo contenido de la pagina después de actualizar                                
+    page_content = self.driver.page_source 
+    response = Selector(page_content) 
+    actual_len = (len(response.xpath('//div[contains(@aria-label, "Resultados de")]/div/div[./a]'))) # Obtenemos la cantidad de busquedas
+
+    if(initial_len == actual_len and actual_len!= 0):
+            break
+</code></pre></p>
+                                <p>Finalmente guardamos los resultados en la lista que creamos al inicio de la parte anterior:
+<pre><code class="language-py" data-prismjs-copy="copy">
+for el in response.xpath('//div[contains(@aria-label, "Resultados de")]/div/div[./a]'):
+    self.results.append({
+        'Nombre del lugar': el.xpath('./a/@aria-label').extract_first(''),
+        'Sitio en Google Maps': el.xpath('./a/@href').extract_first('')
+})
+</code></pre></p>
+<h2>Terminando la primera parte</h2>
+<p>
+    Por lo que <strong> el programa final de la primera parte</strong> queda de la siguiente forma (agregándole unos bloques <code>try/except</code> para posteriormente agregarle manejo de errores):
+<pre><code class="language-py" data-prismjs-copy="copy">
+class googleMapsScraper:
+    def __init__(self): 
+        #Inicializar el Driver
+        driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+        self.driver = driver
+
+
+    def searchPlaces(self, stringSearch):
+        # Lista de resultados de la busqueda
+        self.results = []
+        try:
+            searchText = self.driver.find_element(By.CLASS_NAME, "tactile-searchbox-input")
+            searchText.send_keys(stringSearch)
+            searchButton = self.driver.find_element(By.XPATH, '//html//body//div[3]//div[9]//div[3]//div[1]//div[1]//div[1]//div[2]//div[1]//button')
+            searchButton.click()
+    
+            # Se tiene que generar antes de poder interactuar, por ello le damos 5 segundos
+            time.sleep(5)
+    
+            # Ubicando elementos de la página 
+            resultsBox= self.driver.find_element(By.XPATH, "/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]/div[1]")
+    
+            # Acciones dentro del navegador
+            action = ActionChains(self.driver)
+    
+            if (resultsBox.is_displayed() == True): # Si se están mostrando los resultados
+                action.move_to_element(resultsBox) # Moverse a la sección de resultados
+    
+                initial_len = 0
+                while(resultsBox.is_displayed() == True):
+                    page_content = self.driver.page_source # Obteniendo contenido de la pagina inicial
+                    response = Selector(page_content) 
+                    initial_len = (len(response.xpath('//div[contains(@aria-label, "Resultados de")]/div/div[./a]'))) 
+    
+                    for i in range(5): # Para darle tiempo de actualizar busquedas y evitar que se traslapen
+                        time.sleep(1) 
+                        resultsBox.send_keys(Keys.PAGE_DOWN) # Scroll hacia abajo
+                        
+                    page_content = self.driver.page_source # Obteniendo contenido de la pagina después de actualizar
+                    response = Selector(page_content) 
+                    actual_len = (len(response.xpath('//div[contains(@aria-label, "Resultados de")]/div/div[./a]'))) # Obtenemos la cantidad de busquedas
+    
+                    if(initial_len == actual_len and actual_len!= 0):
+                        break
+    
+                for el in response.xpath('//div[contains(@aria-label, "Resultados de")]/div/div[./a]'):
+                    self.results.append({
+                        'Nombre del lugar': el.xpath('./a/@aria-label').extract_first(''),
+                        'Sitio en Google Maps': el.xpath('./a/@href').extract_first('')
+                    })
+            return(self.results)
+        
+        except:
+            pass
+
+
+    def run(self, stringSearch):
+        self.driver.get('https://www.google.com/maps')
+        time.sleep(2)
+        data = self.searchPlaces(stringSearch)
+        return(data)
+</code></pre>
+</p>
+
+
+<h3>Ejecutar el programa anterior:</h3>
+<pre><code class="language-py" data-prismjs-copy="copy">
+# Texto que queremos ingresar
+stringSearch = " Museos en CDMX "
+
+# Llamamos a la clase
+mapsScraper = googleMapsScraper()
+# Ejecutamos su método run que contiene todo el proceso de ejcución
+data = mapsScraper.run(url, stringSearch)
+</code></pre>
+<hr />
+
+
+<h1>Segunda Parte: <br>
+Buscando información particular de cada resultado</h1>
+<p>
+    Esta parte será menos detallada que la anterior, ya que en su mayoría utilizamos cosas que ya se explicaron antes. La unica novedad es el uso de las instrucciones del tipo <pre><code>.xpath('//button[contains(@aria-label, "")]').xpath("@aria-label").extract_first().replace()except:</code></pre>
+    que nos permiten encontrar objetos HTML como <strong>button, div, span, etc</strong>. Permitiéndonos acceder a información de la págona más allá del XPATH.
+</p>
+
+<h2>Construyendo la función <code>completeDataCollect()</code></h2>
+<p>
+    Vamos a construir la función que nos permitirá recolectar nuestra información faltante acerca de los resultados anteriores. Para ello vamos a hacer que se ejecute el navegador por cada resultado que tenemos (sin necesidad de abrir una ventana) y que se posicione en su URLs correspondiente a su sitio de Google Maps y vamos a recopilar información más exacta como dirección, reviews, horarios, etc.
+    <br>
+    Aquí los bloques <code>try/except</code> son muy importantes, pues en dado caso de que esa información no esté disponible, vamos a guardarlo como una cadena de texto <code>"N/A"</code>; esto con la finalidad de no alterar la longitud de la lista de resultados.
+</p>
+
+<p></p><pre><code class="language-py" data-prismjs-copy="copy">
+def completeDataCollect(url):
+
+options = webdriver.ChromeOptions()
+options.add_argument('headless')
+driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()), options=options)
+driver.get(url)
+
+
+page_content = driver.page_source # Obteniendo contenido de la 
+response = Selector(page_content)
+try:
+    location = response.xpath('//button[contains(@aria-label, "Dirección:")]').xpath("@aria-label").extract_first().replace("Dirección:","")
+except:
+    location = "N/A"
+
+try:  
+    stars = response.xpath('//span[contains(@aria-label, "estrellas")]').xpath("@aria-label").extract_first().split()[0]
+except:
+    stars = "N/A"
+
+try:
+    reviewsCount = response.xpath('//button[contains(@aria-label, "opiniones")]').xpath("@aria-label").extract_first().split()[0]
+except:
+    reviewsCount = "N/A"
+
+try:
+    webSite = response.xpath('//a[contains(@aria-label, "Sitio web:")]').xpath("@href").extract_first()
+except:
+    webSite = "N/A"
+
+try:
+    phoneNumber = response.xpath('//button[contains(@aria-label, "Teléfono:")]').xpath("@aria-label").extract_first().replace("Teléfono: ","")
+except:
+    phoneNumber = "N/A"
+
+try:
+    sched = response.xpath('//div[contains(@aria-label, "horario de apertura durante la semana")]').xpath("@aria-label").extract_first("")
+except:
+    sched = "N/A"
+    
+return (location,stars,reviewsCount,webSite,phoneNumber,sched)
+</code></pre></p>
+
+<p>Hay que tener presente que la variable <code>URL</code> no hace referencia a la URL de Google Maps, sino a la URL particular de cada resultado; la cuál ya hemos obtenido en la primera parte.</p>
 
 
 
+<h2>Ejecutando y guardando los datos en una lista</h2>
+<p>
+    Esta lista contendrá una lista que contendrá los nombres de cada resultado obtenido y a su vez, cada nombre contendrá una lista anidada con su información particular correspondiente.
+</p>
+<p><pre><code class="language-py" data-prismjs-copy="copy">
+results = []
+
+for i in range(len(names)):
+    results.append(completeDataCollect(names["Sitio en Google Maps"][i]))
+</code></pre></p>
+
+
+<h2>
+    Creando una lista por cada tipo de dato recolectado
+</h2>
+<p>Ahora vamos a separar nuestra información en listas individuales, de manera que una sola lista contenga los nombres, otra las direcciones, otra el horario, etc. Esto para comenzar a estructurar nuestros datos y poder visualizarlo como un DataFrame o como una tabla posteriormente.</p>
+<p><pre><code class="language-py" data-prismjs-copy="copy">
+addres_ = []
+stars_ = []
+reviewsCount_ = []
+webSite_ = []
+phone_ = []
+sched_ = []
+    
+for i in range(len(names)):
+    addres_.append(results[i][0])
+    stars_.append(results[i][1])
+    reviewsCount_.append(results[i][2])
+    webSite_.append(results[i][3])
+    phone_.append(results[i][4])
+    sched_.append(results[i][4])
+</code></pre></p>
+
+
+<h2>Creando un diccionario para asignarle un nombre a cada columna y creando un DF</h2>
+<p><pre><code class="language-py" data-prismjs-copy="copy">
+dict_ = {"Dirección": addres_,
+    "Calificación":stars_,
+    "Total de Calificaciones": reviewsCount_,
+    "Stitio web": webSite_,
+    "Teléfono": phone_,
+    "Horario": sched_
+}
+df_ = pd.DataFrame(dict_) 
+df_  
+</code></pre></p>
+
+<h2>Creando el DataFrame final </h2>
+<p>Finalmente, vamos a reorganizar la información.</p>
+<p><pre><code class="language-py" data-prismjs-copy="copy"></code>
+data_df = pd.concat([names, df_], axis=1)
+data_df
+</code></pre></p>
+<p>Finalizamos con un DataFrame con nuestra información ya estructurada que se ve de la siguiente forma:</p>
+<div align="center">
+    <span class="image fit" >
+        <img src="/images/blogImages/scrapp/finalDFScraper.png" alt="" />
+    </span>
+</div>
 
 
 <hr />

@@ -2907,7 +2907,7 @@ input, select, textarea {
 				
 			}
 			.tiles article:nth-child(6n - 2):before {
-				background-color: #4b2f72e8;
+				background-color: #5c3772e8;
 				
 			}
 			.tiles article:nth-child(6n - 1):before {
@@ -2996,7 +2996,7 @@ input, select, textarea {
 			background-color: #1e1f32;
 		}
 		.spotlights.style3{
-			background-color: #6c4867;
+			background-color: #451f45bc;
 		}
 		.spotlights.style4{
 			background-color: #3f2140;
@@ -3085,6 +3085,8 @@ input, select, textarea {
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
 				flex-direction: row-reverse;
+
+				
 				/*                    */
 				/*COLOR DEL CUADRITO DE ENMEDIO*/
 				background-color: rgba(34, 29, 44, 0.776);
@@ -3094,10 +3096,10 @@ input, select, textarea {
 					background-color: rgba(34, 29, 44, 0.776);
 				}
 				.spotlights.style2 > section:nth-child(2n){
-					background-color: #3b3b3b
+					background-color: #3c3c3cd6
 				}
 				.spotlights.style3 > section:nth-child(2n){
-					background-color: #4d3551
+					background-color: #61405f
 				}
 				.spotlights.style4 > section:nth-child(2n){
 					background-color: #34253d
@@ -3381,29 +3383,65 @@ input, select, textarea {
 		}
 			/*COLOR DE LAS LETRAS DEL TITULO*/
 			#header.alt.style1 .logo strong {
-				background-color: #000000;
+				background-color: #ffffff;
+				color: #000000;
+			}
+			#header.alt.style1 .logo:hover strong {
+				background-color: #63426f;
 				color: #ffffff;
 			}
+			
+
 			#header.alt.style2 .logo strong {
-				background-color: #000000;
-					color: #ffffff;
+				background-color: #ffffff;
+				color: #000000;
 			}
+			#header.alt.style2 .logo:hover strong {
+				background-color: #3a6c8b;
+				color: #ffffff;
+			}
+
+
 			#header.alt.style3 .logo strong {
-				background-color: #000000;
-					color: #ffffff;
+				background-color: #ffffff;
+				color: #000000;
 			}
+			#header.alt.style3 .logo:hover strong {
+				background-color: #b9b6b6;
+				color: #000000;
+			}
+
+
 			#header.alt.style4 .logo strong {
-				background-color: #000000;
-					color: #ffffff;
+				background-color: #ffffff;
+				color: #000000;
 			}
+			#header.alt.style4 .logo:hover strong {
+				background-color: #87618b;
+				color: #ffffff;
+			}
+
+
 			#header.alt.style5 .logo strong {
-				background-color: #000000;
-					color: #ffffff;
+				background-color: #ffffff;
+				color: #000000;
 			}
+			#header.alt.style5 .logo:hover strong {
+				background-color: #2c644a;
+				color: #ffffff;
+			}
+
+			
 			#header.alt.style6 .logo strong {
-				background-color: #000000;
-					color: #ffffff;
+				background-color: #ffffff;
+				color: #000000;
 			}
+			#header.alt.style6 .logo:hover strong {
+				background-color: #3c3c3c;
+				color: #ffffff;
+			}
+
+
 		body.is-preload #header.alt {
 			opacity: 0;
 		}
@@ -3590,10 +3628,10 @@ input, select, textarea {
 			background-color: #383b5b;
 		}
 		#banner.style3:after {
-			background-color: #803c6f;
+			background-color: #a56c9c;
 		}
 		#banner.style4:after {
-			background-color: #401f4b;
+			background-color: #563b60;
 		}
 		#banner.style5:after {
 			background-color: #425e43;
@@ -3672,12 +3710,28 @@ input, select, textarea {
 	#main {
 		/*FONDO DEL MAIN, LO MANTENGO A LA MITAD PARA EVITAR NEGROS MUY FUERTES*/
 		/*                                                   */
-		background-color: #00000089;
+		background-color: #1e1e1ebd;
 		/*                                                   */
 	}
-		#main.style6{
-			background-color: #3f2b41;
+		#main.style1{
+			background-color: #0e0e0ebd;
 		}
+		#main.style2{
+			background-color: #121212bd;
+		}
+		#main.style3{
+			background-color: #321f39bd;
+		}
+		#main.style4{
+			background-color: #161616bd;
+		}
+		#main.style5{
+			background-color: #272727bd;
+		}
+		#main.style6{
+			background-color: #272727bd;
+		}
+
 		#main > * {
 			
 		}
@@ -3704,13 +3758,14 @@ input, select, textarea {
 					}
 				}
 
+				
 				#main > * > .inner2 {
 					border-top: solid 1px rgb(255, 255, 255);
 					padding: 5% 5% 5% 5% ;
 					margin: 0 auto;
 					max-width: 100%;
 					width: calc(100%-1em);
-					background-color: #3f2b41;
+					background-color: #3e2b43d1;
 					border-bottom: solid 1px rgb(255, 255, 255);
 				}
 					@media screen and (max-width: 1080px) {
