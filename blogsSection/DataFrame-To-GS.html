@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Creando Hojas de Cálculo desde un DataFrame en Python</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/articles.css" />
+        <link rel="stylesheet" href="prism/prism.css">
+        <noscript>
+            <link rel="stylesheet" href="assets/css/noscript.css" />
+        </noscript>
+        <!-- KATEX -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
+            integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"
+            integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja"
+            crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+            integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+            crossorigin="anonymous"></script>
+    </head>
+
+
+<body class="is-preload">
+        <div id="wrapper">
+            <!-- Header -->
+                <header id="header">
+                    <a href="/index.html" class="logo"><strong>Portafolio</strong> <span>Abdiel Guerrero V.</span></a>
+                    <nav>
+                        <a href="#menu">Menú</a>
+                    </nav>
+                </header>
+            <!-- Menu -->
+            <nav id="menu">
+                <ul class="actions stacked">
+                    <li><a href="/index.html" class="button fit">Home</a></li>
+                    <li><a href="/aboutme.html" class="button fit">Sobre mí</a></li>
+                    <li><a href="/ia.html" class="button fit">IA y Data Science</a></li>
+                    <li><a href="/quantum.html" class="button fit">Quantum Computing</a></li>
+                    <li><a href="/blog.html" class="button fit">Blog</a></li>
+                    <li><a href="https://github.com/abdielgv163" class="button primary fit">GitHub</a></li>
+                </ul>
+            </nav>
+            <!-- Main -->
+                    <!-- One -->
+                        <section id="one">
+                            <div class="inner">
+                                <div>
+                                    <ul class="actions">
+                                        <li><a href="/blog.html" class="button icon solid fa-undo">Volver</a></li>
+                                    </ul>
+                                </div>
+                                <header class="major">
+                                    <div id="main" class="alt">
+                                    <h1>Creando Hojas de Cálculo en GS a partir de <br>
+                                        un DataFrame en Python</h1>
+                                </header>
+                                <p>
+                                En este artículo vamos a hablar un poco acerca de <code>gspread</code>, la API de Google Sheets que nos permitirá concectarnos con GS a través de código, de manera que podamos automatizar la creación y edición de nuestras hojas de cálculo. Además, nos centraremos en explicar cómo pasar de un Data Frame creado en Python a través de Pandas, a una hoja de cálculo de Google Sheets.
+                                <br>Esto es muy útil en casos donde estemos colaborando con otras personas en un proyecto y que no necesariamente todos los integrantes del equipo sepan utilizar Pandas. De manera que vamos a estar actuando como otro colaborador en el archivo alojado en la nube o simplemente para automatizar la creción de hojas de cálculo.
+                                </p>
+                                <div align="center">
+                                    <span class="image fit" ><img src="/images/blogImages/google/GSDF.jpg" alt="" /></span>
+                                </div>
+
+                                <p>Tenemos 2 maneras diferentes de conectarnos:
+                                    <ul>
+                                        <li>
+                                            <strong>1. Service Account</strong>: Accediendo a las hojas de cálculo a través de una cuenta bot. Es decir, creamos una cuenta extra, le brindamos permisos para acceder y editar el proyecto y por medio de está efectuaremos los cambios.
+                                            <br>
+                                            Una cuenta de servicio es un tipo especial de cuenta de Google destinada a representar a un usuario no humano que necesita autenticarse y estar autorizado para acceder a los datos en las API de Google.
+                                        </li>
+                                        <li>
+                                            <strong>2. OAuth Client ID</strong>: Accediendo a las hojas de cálculo a través de la cuentas de los usuarios finales, es decir, desde nuestras cuentas principales.
+                                    </ul>
+
+                                    En este caso nos centraremos únicamente en la opción de <strong>Service Account</strong>.
+                                </p>
+                                <hr />
+
+
+
+                                <h2>Habilitando las APIs</h2>
+                                <p>
+                                    Antes de comenzar a utilizar gspread, tenemos que configurar todo y brindarle acceso a la cuenta bot. Para ello vamos a realizar lo siguiente:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <strong>1. Entrar a la Consola de Desarrollador de Google</strong>: Vamos a acceder a la consola de desarrollador de Google por medio del siguiente link y crearemos un nuevo proyecto y le damos un nombre (es un entorno en donde podemos configurar distintas APIs y funcionalidades de Google cloud):<br><br>
+                                        <div align="center">
+                                            <a href="https://console.cloud.google.com/apis/dashboard">https://console.cloud.google.com/apis/dashboard</a>
+                                        </div>
+                                        <br>
+                                        <div align="center">
+                                            <span class="image fit" ><img src="/images/blogImages/google/GS_Article_1.png" alt="" /></span>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <strong>2. </strong>Vamos a la parte de <strong> "Search for APIs and Services" o "APIs y Servicios"</strong> y vamos a búscar y habilitar 2 cosas en particular: <code>Google Drive API</code> y <code>Google Sheets API</code>. Claramente la primera es para el acceso a Google Drive (donde tendremos almacenados nuestros archivos) y la segunda es para establecer la conexión en particular con Google Sheets.
+                                    </li>
+                                </ul>
+                                <hr />
+
+
+                                <h2>Configurando la cuenta de servicio</h2>
+                                <p>Recordemos que la cuenta de servicio es un tipo especial de cuenta de Google que sirven para representar a usuarios no humanos que necesitan ser autentificados. <br>
+                                Estas cuentas no tendrán acceso a ningún archivo o proyecto hasta que nosotros lo autoricemos y es justo eso lo que vamos a realizar a continuación.</p> 
+
+                                <p>El proceso es el siguiente:
+                                    <ul>
+                                        <li>
+                                            <strong>1. </strong>Una vez ya tenemos habilitadas las APIs en nuestro proyecto iremos a la siguiente sección: <br>
+                                                <strong>APIs y Servicios > Credenciales > Crear Credenciales > Cuenta de servicio.</strong><br>
+                                            <br>
+                                            <div align="center">
+                                                <span class="image fit" ><img src="/images/blogImages/google/GS_Article_2.png" alt="" /></span>
+                                            </div>
+                                        </li>
+
+                                        <li><strong>2. Llenamos los 3 pasos del formato </strong> dándole un nombre, ID (automático), Descripción y finalizamos el proceso con el botón de <strong>Listo</strong>. <br><br></li>
+
+                                        <li><strong>3. </strong>Ahora nos vamos a la ruta <br> <strong>Credenciales > Cuentas de Servicio > Seleccionamos la cuenta que creamos con la credencial anterior > Claves > Agregar Clave > JSON</strong><br><br>
+                                            <div align="center">
+                                                <span class="image fit" ><img src="/images/blogImages/google/GS_Article_3.png" alt="" /></span>
+                                            </div>
+                                            Esto nos generará un archivo que nos permitirá manejar el acceso a nuestra cuenta. <strong>La vamos a descargar y la guardaremos en nuestro equipo en la ruta que deseemos,</strong> para este punto ya tenemos lista nuestras claves de acceso.
+                                        </li>
+                                </p>
+                                <hr />
+
+
+                                <h2>Dar acceso a las hojas de cálculo</h2>
+                                <p>Ahora que ya tenemos nuestra API y las credenciales listas, podemos proceder a darle acceso a la cuenta de servicio a nuestros libros y hojas de Google Sheets. Para ello vamos a hacer lo siguiente:  <ul>
+                                    <li><strong>1. </strong> Vamos a la Google Cloud Console y vamos a copiar el correo que se generó al momento de crear la cuenta de servicio. Esto lo encontraremos en la ruta: <br><br>
+                                    <strong>Credenciales > Cuentas de servicio</strong> y ahí podremos ver un correo del tipo <code>nombreDeCuenta@nombreDelProyecto.iam.gserviceaccount.com</code>. Y lo vamos a copiar. <br><br>
+                                    <div align="center">
+                                        <span class="image fit" ><img src="/images/blogImages/google/GS_Article_4.png" alt="" /></span>
+                                    </div></li>
+                                    <li><strong>2. </strong> Vamos al sitio de Google Sheets y creamos un libro nuevo como lo hacemos normalmente.</li><br>
+                                    <li><strong>3. </strong> Ya dentro del archivo vamos a <strong>compartir </strong> y en la sección de <code>Agregar personas y grupos</code> vamos a pegar el correo correspondiente a nuestra cuenta de servicio.
+                                        <div align="center">
+                                            <span class="image fit" ><img src="/images/blogImages/google/GS_Article_5.png" alt="" /></span>
+                                        </div>
+                                    Listo! Para este punto nuestra cuenta de servicio ya tiene acceso a Google Sheets, ahora toca configurar el entorno para realizar el código.
+                                    </li>
+                                </ul> </p>
+                                <hr />
+
+
+                                <h2>Comprobar el funcionamiento en código</h2>
+
+                                <p>Vamos a realizar un pequeño programa que nos permita verificar si todo está funcionando correctamente, para ello lo primero que vamos a hacer es ir a nuestra hoja de calculo y en la celda <code>A1</code> vamos a escribir un mensaje cualquiera que posteriormente vamos a extraer.</p>
+
+                                <p><strong>Para esto ya debemos tener instalado gspread en nuestro entorno local.</strong> Esto lo podemos hacer por medio de PIP y recomendablemente con un ambiente virtual .</p>
+                                <pre><code class="language-bash" data-prismjs-copy="copy">
+pip install gspread
+                                </code></pre>
+                                <br><p>Y el programa es el siguiente:</p>
+                                    <pre><code class="language-py" data-prismjs-copy="copy">
+# Importar librería
+import gspread
+
+
+
+# Asigna la llave de acceso para la cuenta de servicio
+# Tenemos que cambiar la ruta de filename por la ruta de nuestro archivo JSON
+gc = gspread.service_account(filename="/home/abdiel-fedora-linux/Descargas/DB/scraping-link-sheets-boot.json")
+
+# Abre el archivo de Google Sheets
+# Cambiar el valor entre comillar por el nombre del libro de Google Sheets
+sh = gc.open("Data_Maps_Scraper")
+
+# Obtén la información de la primer celda
+print(sh.sheet1.get('A1'))
+                                    </code></pre>
+<p>Si nos imprime el mensaje que dejamos en nuestra celda <code>A1</code>, entonces funciona correctamente.</p>
+                                    <hr />
+
+
+                                    <h2>Pandas a Google Sheets</h2>
+                                    <p>Finalmente, vamos a explicar brevemente como transformar un Data Frame generado con Pandas a una hoja de cálculo con Google Sheets. Para ello vamos a utilizar una funcionalidad especial de gspread llamada <code>gspread_dataframe</code> que facilita bastante el trabajo. Y partiremos de un archivo CSV del que ya dispongo previamente, esto lo podremos hacer con cualquier otro CSV o directamente con un DataFrame.</p>
+                                    <br>
+                                    <p>Hay que tener en cuenta que Pandas ya ofrece una opción nativa para convertir un DataFrame a CSV o a un archivo de Excel, la diferencia con este método radica en que realizaremos los cambios en tiempo real en una plataforma de trabajo colabotarivo en la nube sin tocar directamente la hoja de cálculo, sino a través de nuestra manipulación en Pandas.</p>
+
+                                    <h3>Importar librerías</h3>
+                                    <p>Para esto ya debemos tener <code>gspread </code> y <code>pandas</code> instalado en nuestro entorno local.</p>
+                                    <pre><code class="language-py" data-prismjs-copy="copy">
+import pandas as pd
+import gspread
+from gspread_dataframe import set_with_dataframe
+                                    </code></pre><br>
+
+                                    <h3>Leyendo un .csv como un DataFrame</h3>
+                                    <pre><code class="language-py" data-prismjs-copy="copy">
+df = pd.read_csv(filepath_or_buffer="/home/abdiel-fedora-linux/Documentos/DB_Data/cafeterias.csv")
+df
+                                    </code></pre><br>
+                                    <div align="center">
+                                        <span class="image fit" ><img src="/images/blogImages/google/DF_GS.png" alt="" /></span>
+                                    </div>
+
+                                    <h3>Modificando la hoja de cálculo</h3>
+                                    <p>
+                                    En este caso vamos a colocar nuestro archivo JSON que contiene las claves, después vamos a seleccionar la hoja 1 de nuestro libro, posteriormente vamos a eliminar una columna que no nos sirve de nada (esto es parte de mi CSV), vamos a limpiar toda la hoja (pues  en este caso actualizo en su totalidad la hoja de cálculo) y vamos a escribir toda la información del DF en la hoja de GS.
+                                    </p>
+                                    <pre><code class="language-py" data-prismjs-copy="copy">
+
+
+# Primero agregamos las llaves y asignamos la hoja de trabajo
+gc = gspread.service_account(filename="/home/abdiel-fedora-linux/Descargas/DB/scraping-link-sheets-boot.json")
+worksheet1 = sh.sheet1
+
+
+# Eliminamos la columna que no nos brinda información alguna
+df = df.drop(["Unnamed: 0"], axis=1)
+
+
+# Limpiamos la hoja 
+worksheet1.clear()
+
+# Escribimos la información del DF en la hoja de trabajo 1
+set_with_dataframe(worksheet=worksheet1, dataframe=df, include_index=False,
+include_column_header=True, resize=True)
+                                    </code></pre>
+                                    <p>
+                                        Listo! Hemos replicado nuestra tabla del DataFrame a nuestro Google Sheets.
+                                    </p>
+                                    <div align="center">
+                                        <span class="image fit" ><img src="/images/blogImages/google/GS-Result.png" ></span>
+                                    </div>
+
+<hr />
+</section>
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <h2>Redes sociales: </h2>
+                <ul class="icons">
+                    <li><a href="https://twitter.com/AbdielGuerrer20" class="icon brands alt fa-twitter"><span
+                                class="label">twitter</span></a></li>
+                    <li><a href="https://github.com/abdielgv163" class="icon brands alt fa-github"><span
+                                class="label">GitHub</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/abdiel-guerrero-162-gv/"
+                            class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; El diseño del sitio web se ha creado a partir de una plantilla.</li>
+                    <br>
+                    <li>Diseño: Forty By: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/jquery.scrollex.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="js/breakpoints.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <script src="prism/prism.js"></script>
+    <!-- Scripts de KATEX -->
+    <script src="js/renderMath.js"></script>
+
+</body>
+</html>
