@@ -3540,7 +3540,7 @@ input, select, textarea {
 
 			#main > * > .inner2 {
 				border-top: solid 1px rgb(255, 255, 255);
-				padding: 5% 10% 5% 10% ;
+				padding: 5% 90% 5% 90% ;
 				margin: 0 auto;
 				max-width: 100%;
 				width: calc(100%);
@@ -3613,8 +3613,8 @@ input, select, textarea {
 		-webkit-transition: -webkit-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		-ms-transition: -ms-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
-		padding: 0% 12% 0% 12%;
-		
+		padding: 0% 25% 0% 25%;
+		font-size: auto;
 	}
 
 	#wrapper.is-transitioning {
@@ -3624,7 +3624,7 @@ input, select, textarea {
 		padding: 4em 0 2em 0;
 		margin: 0 auto;
 		max-width: 65em;
-		width: calc(100% );
+		width: calc(100%);
 	}
 	@media screen and (max-width: 736px) {
 		#wrapper>*>.inner {

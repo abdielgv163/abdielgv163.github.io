@@ -3765,7 +3765,7 @@ input, select, textarea {
 				
 				#main > * > .inner2 {
 					border-top: solid 1px rgb(255, 255, 255);
-					padding: 5% 5% 5% 5% ;
+					padding: 5% 17% 5% 17% ;
 					margin: 0 auto;
 					max-width: 100%;
 					width: calc(100%-1em);
