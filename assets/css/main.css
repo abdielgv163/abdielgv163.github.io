@@ -118,7 +118,7 @@ input, select, textarea {
 			background: #1e1e1e;
 		}
 		body.style5{
-			background: #000000;
+			background: #00000083;
 		}
 		body.style6{
 			background: #476265;
@@ -3003,7 +3003,7 @@ input, select, textarea {
 			background-color: #3f2140;
 		}
 		.spotlights.style5{
-			background-color: #000000;
+			background-color: #181818b6;
 		}
 		.spotlights.style6{
 			background-color: #000000;
@@ -3106,10 +3106,10 @@ input, select, textarea {
 					background-color: #34253d
 				}
 				.spotlights.style5 > section:nth-child(2n){
-					background-color: rgba(0, 0, 0, 0.776);
+					background-color: rgba(53, 53, 53, 0.776);
 				}
 				.spotlights.style6 > section:nth-child(2n){
-					background-color: rgba(0, 0, 0, 0.776);
+					background-color: rgba(151, 148, 148, 0.776);
 				}
 				.spotlights > section:nth-child(2n) > .content {
 					-moz-align-items: -moz-flex-end;
@@ -3251,7 +3251,7 @@ input, select, textarea {
 		}
 		#header.style5{
 			/*COLOR DEL TITULO CUANDO BAJAS EL SCROLL*/
-		background-color: #425e43;
+		background-color: #212221;
 		}
 		#header.style6{
 			/*COLOR DEL TITULO CUANDO BAJAS EL SCROLL*/
@@ -3730,7 +3730,7 @@ input, select, textarea {
 			background-color: #161616bd;
 		}
 		#main.style5{
-			background-color: #272727bd;
+			background-color: #222121bd;
 		}
 		#main.style6{
 			background-color: #272727bd;
