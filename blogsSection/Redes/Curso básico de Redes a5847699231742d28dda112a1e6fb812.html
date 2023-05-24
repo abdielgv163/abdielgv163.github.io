@@ -1,0 +1,729 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Curso básico de Redes</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a5847699-2317-42d2-8dda-112a1e6fb812" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://static.platzi.com/media/achievements/fundamentos-de-redes_badge-55f79f0a-d350-4879-b9ab-b148596f44ad.png"/></div><h1 class="page-title">Curso básico de Redes</h1></header><div class="page-body"><p id="2580ff5f-6f17-4fb6-ae28-bf9ec4038787" class="">Jesús Abdiel Guerrero Valerio 💜</p><hr id="606332c1-f70b-4930-a349-948d4f251841"/><h1 id="09526d8c-fd0b-444f-afb5-ecb95382ad1d" class="">Clasificación de las redes computacionales</h1><h2 id="bb95990d-23b3-45f9-a26c-8d748dbf9c2c" class="">Clasificación por Tecnologías de transmisión</h2><div id="f3c7b034-9a67-4bfe-afd6-61f4ea53c99d" class="column-list"><div id="35dba24f-00d8-4a4e-a90d-c26d9e355096" style="width:56.25%" class="column"><h3 id="9a909fa3-bac8-4748-be9d-cb69355c6fde" class="">Enlaces de difusión (Broadcast)</h3><ul id="3c1ee863-fac4-46a0-a556-42001c6d8724" class="bulleted-list"><li style="list-style-type:disc">Todas las máquinas en la red<strong> comparten el canal de comunicación</strong>.</li></ul><ul id="935c5d34-642a-4444-a345-9cc3db9e811f" class="bulleted-list"><li style="list-style-type:disc">Los paquetes que envía una máquina la reciben todas las demás.</li></ul><ul id="a1479fc4-322c-4851-9739-f5906577b51d" class="bulleted-list"><li style="list-style-type:disc">Se usa un <strong>campo verificador</strong> para saber a quién pertenece o si enviar a todos los destinos.</li></ul><ul id="2fd854cd-67e9-48ba-9478-ffa749483455" class="bulleted-list"><li style="list-style-type:disc">Predominantemente utilizado por estaciones de TV y canales de TV por cable.</li></ul></div><div id="f7bf1519-132e-4d16-b742-b8d797214283" style="width:43.75%" class="column"><figure id="a4482f68-cc2c-4989-9cab-70d3a25ece19" class="image"><a href="Untitled.png"><img style="width:196px" src="Untitled.png"/></a></figure></div></div><div id="68d726e6-1a98-43a0-b34c-576ba1306ac2" class="column-list"><div id="f85d0274-8a9f-4901-b839-43d3ed7e33a9" style="width:56.25%" class="column"><h3 id="963a41eb-9d67-475e-81b6-67d841775778" class="">Multicast</h3><ul id="cdb40765-adac-4e39-85a2-99897fc893eb" class="bulleted-list"><li style="list-style-type:disc">Es un método de transmisión<strong> uno a muchos</strong> a través de IP.</li></ul><ul id="7e1b8dc4-025f-4c3b-b0dc-ebb180f4fd60" class="bulleted-list"><li style="list-style-type:disc">Similar a la transmisión tradicional.</li></ul><ul id="d51b4f09-f731-4b98-bfef-f44713bbce5c" class="bulleted-list"><li style="list-style-type:disc">Utiliza UDP (Protocolo de datagramas de usuario) para transmitir a través de ina red IP cerrada como una LAN.</li></ul><ul id="df65fe5f-8df2-4a86-9d94-767a39a1d6da" class="bulleted-list"><li style="list-style-type:disc">Se le conoce como IPTV a la multidifusión de TV en vivo y como OTT cuando es a través de internet.</li></ul></div><div id="5e4acf2b-f021-4b4b-88a8-df3c362af16d" style="width:43.75%" class="column"><figure id="322f2057-5e8a-449b-82da-8eb8230fd4cc" class="image"><a href="Untitled%201.png"><img style="width:196px" src="Untitled%201.png"/></a></figure></div></div><div id="7aa8c2b1-686f-4738-85d2-639c2622c9d1" class="column-list"><div id="67bc22d5-73ec-4dee-952d-638440c94cf1" style="width:56.25%" class="column"><h3 id="e6af5c5b-24f4-4c25-95c6-98b71bdb521a" class="">Enlaces de punto a punto (Unicast)</h3><ul id="4e31c0ee-cf76-4639-97f0-0d4454fa23f6" class="bulleted-list"><li style="list-style-type:disc">Conecta<strong> pares individuales</strong> de máquinas.</li></ul><ul id="175ad5bb-ebde-4e39-9ef6-5a21cf705c07" class="bulleted-list"><li style="list-style-type:disc">Puede visitar máquinas intermedias entre su origen y destino.</li></ul><ul id="bb9fa7c3-5845-48c9-a75c-ac59b0d69c46" class="bulleted-list"><li style="list-style-type:disc">Utiliza el protocolo TCP (Protocolo de Control de Trasmisión).</li></ul><ul id="9ce3c396-2a67-4c7f-913b-395b8acebc38" class="bulleted-list"><li style="list-style-type:disc">Servicios OTT.</li></ul></div><div id="5efb7451-0475-46e5-b334-ae9c76eabca0" style="width:43.74999999999999%" class="column"><figure id="13214f17-7700-4359-a126-cd65bfd70bb4" class="image"><a href="Untitled%202.png"><img style="width:196px" src="Untitled%202.png"/></a></figure></div></div><hr id="396f8a9d-db80-4c59-883e-b6b742328e2f"/><h2 id="0ca06dbd-c8bf-4a4f-b4d4-df850d605f53" class="">Clasificación por escala</h2><p id="4245cb56-6fbe-49f4-b4c1-bb49a055b1a7" class="">Estas se clasifican según su tamaño o grado de cobertura.</p><div id="bc227b4a-9fb7-4d19-b67a-899acce94c94" class="column-list"><div id="18b14418-fc29-4597-b5da-d82f89a11eed" style="width:50%" class="column"><h3 id="c369d171-bcb1-430f-a86a-b4cdd0b75b59" class="">Redes de área personal (PAN)</h3><ul id="c60e4eec-1c2f-41c6-91e7-db73de83b461" class="bulleted-list"><li style="list-style-type:disc">Estas son las redes de<strong> menor cobertura</strong>.</li></ul><ul id="a085c513-1d4d-4c14-ac0a-b6cf61135bfd" class="bulleted-list"><li style="list-style-type:disc">Su alcance está en el orden de unos metros.</li></ul><ul id="9a80a815-b8ce-43da-ac6c-09656b49ba01" class="bulleted-list"><li style="list-style-type:disc">Puede ser una red entre una computadora y un dispositivo Bluetooth. </li></ul></div><div id="35e652d4-a84a-4dc1-9fe1-d7eda89a0a08" style="width:50%" class="column"><figure id="cd26d287-58b0-4d61-b6a9-1d0801b5971a" class="image"><a href="Untitled%203.png"><img style="width:303px" src="Untitled%203.png"/></a></figure></div></div><div id="e345262b-80f3-4777-a5ff-479aa678294b" class="column-list"><div id="a93b652d-732b-4d14-8058-42472624798a" style="width:50%" class="column"><h3 id="68d269a0-2938-468b-9e0f-56317a78047d" class="">Redes de área local (LAN)</h3><ul id="2a5b9e2f-d421-4492-bf6f-83e0fdc6ce36" class="bulleted-list"><li style="list-style-type:disc">Tienen una<strong> cobertura que va desde los 10 a 100 metros.</strong></li></ul><ul id="b187ac05-5f3c-4d4a-ae8f-f4807003721e" class="bulleted-list"><li style="list-style-type:disc">Podría ser una red de ordenadores dentro de una <strong>oficina, colegio u hogar</strong>.</li></ul><ul id="bf631f3d-f8f8-4b0b-9ad8-3fb6c2a5fb38" class="bulleted-list"><li style="list-style-type:disc">Aquí podemos conectar tanto computadoras, Smartphones, TVs, impresoras, etc.</li></ul></div><div id="4f936146-c237-4434-adaf-2ab09bbaa4f8" style="width:50%" class="column"><figure id="1a8b1b08-29b4-4c2a-9a4a-ce7833f3bb2c" class="image"><a href="Untitled%204.png"><img style="width:303px" src="Untitled%204.png"/></a></figure></div></div><div id="8cd7be4d-d8c1-4b9b-8e9b-5a8edf18f6de" class="column-list"><div id="f938f2d6-e9be-4218-95ff-120307523e22" style="width:50%" class="column"><h3 id="fcff70e5-bf15-4ddb-aac1-ad8855880b0a" class="">Redes de área metropolitana (MAN)</h3><ul id="b07998a0-860e-4e28-8a2d-6e6be5259c06" class="bulleted-list"><li style="list-style-type:disc">Tienen una <strong>cobertura del orden de los 10Km</strong>.</li></ul><ul id="e8c0ce3d-26e7-438e-a2f0-5d152d4957b0" class="bulleted-list"><li style="list-style-type:disc">Se puede considerar la red de un proveedor de servicio de internet en una ciudad como un tipo de red MAN.</li></ul></div><div id="76bdb9cd-c38f-428f-acc0-551618b9504c" style="width:50%" class="column"><figure id="0855e095-8d97-49f5-b74d-bed6db7a16bc" class="image"><a href="Untitled%205.png"><img style="width:303px" src="Untitled%205.png"/></a></figure></div></div><div id="0a763d3a-17a9-49aa-b615-8429c2e5a87d" class="column-list"><div id="836c5f3f-e27c-4c40-8591-81e3e9a3ff0b" style="width:50%" class="column"><h3 id="216c3d6b-97d4-48e4-ab7b-ef9af0bfa124" class="">Redes de área amplia (WAN)</h3><ul id="885f9626-8262-4389-95ac-4f5b991c46ad" class="bulleted-list"><li style="list-style-type:disc">Estas redes cubren grandes regiones de la <strong>escala de países o incluso un continente entero.</strong></li></ul><ul id="4488d207-92cd-416f-8166-9fcf3a1463e3" class="bulleted-list"><li style="list-style-type:disc">Podemos incluir las redes de compañías telefónicas o de televisión por cable que ofrecen cobertura regional o nacional.</li></ul></div><div id="2390e3de-80b8-4bbf-9e27-b6fa95137a9d" style="width:50%" class="column"><figure id="9ff9981a-2039-4943-ad40-61bbf9b8641c" class="image"><a href="Untitled%206.png"><img style="width:303px" src="Untitled%206.png"/></a></figure></div></div><div id="83abb0af-a95b-40d7-bdff-d5e802225060" class="column-list"><div id="410e5d54-61ed-44ca-ac3b-1a3b5b9d3008" style="width:50%" class="column"><h3 id="d50323a8-7e08-45e6-a9a1-d6fc332766e8" class="">Internet</h3><p id="170ff454-be85-41be-acc5-884edbf4e9ca" class="">En el caso del internet mismo, sería la <strong>red existente más grande;</strong> pues es una interconexión entre muchas redes WAN, LAN,etc. Y brinda un acceso a cualquier parte del mundo conectada a la red.</p></div><div id="c4d048a8-7cfd-4115-a37e-ef12208c6495" style="width:50%" class="column"><figure id="ba73d3af-fed2-4352-973c-8234377115f7" class="image"><a href="Untitled%207.png"><img style="width:288px" src="Untitled%207.png"/></a></figure></div></div><hr id="850dc581-97ff-48ff-b477-ae4ff2e3be0f"/><h2 id="6e46bfae-bfb6-41bc-ae89-6b1cd7a77a0d" class="">Clasificación según su flujo de datos</h2><div id="45006312-977e-4b89-92b3-27420abb397f" class="column-list"><div id="9560b315-20c0-40d3-b6f3-f8e4f28ba10c" style="width:37.5%" class="column"><ul id="4e9fbc4c-c9c3-4fcd-a31b-347c28489f73" class="bulleted-list"><li style="list-style-type:disc"><strong>Simplex:
+</strong>Cuando en un enlace entre dos dispositivos, uno solo puede transmitir información mientras que el otro sólo puede recibirla.</li></ul><ul id="81ff3cff-5218-4c43-ab59-fafae0ee5c7b" class="bulleted-list"><li style="list-style-type:disc"><strong>Half-Duplex:
+</strong>Los 2 dispositivos pueden transmitir información, pero no en forma simultánea.</li></ul><ul id="44a701ad-3375-42ad-a8f6-eb10c22cb59b" class="bulleted-list"><li style="list-style-type:disc"><strong>Full-Duplex:
+</strong>Ambos dispositivos pueden transmitir información de manera simultánea.</li></ul></div><div id="7d4bdbaa-e5ed-40ce-8f87-13bd4ebbbd1e" style="width:62.5%" class="column"><figure id="17f289fa-179e-445e-8c1f-75ffe2153af3" class="image"><a href="Untitled%208.png"><img style="width:624px" src="Untitled%208.png"/></a></figure></div></div><hr id="38a72a39-224c-4e7c-ae8c-81f5d499a7a3"/><h2 id="bd9f07a6-7475-465b-a490-176059e5e7da" class="">Clasificación según su topología</h2><p id="804ae03d-7894-4dfc-96ae-36dba358cf6a" class="">Con topología nos referimos a como están construidas física o lógicamente. Es decir, ya sea teniendo en cuenta las conexiones físicas entre los dispositivos (p. ej. cables de cobre), o teniendo en cuenta la forma en la que diferentes dispositivos de la red se comunican entre sí más allá de su conexión física.</p><h3 id="90c18fa7-5720-494a-80a0-830d41c6339e" class="">Topología Bus</h3><div id="1da083eb-c522-43a7-8945-cbbb0c384c06" class="column-list"><div id="a857e2fa-800e-4a86-83bd-db8ae99be4bb" style="width:62.5%" class="column"><p id="311d32ed-6704-4eca-8e45-52edb0fc364c" class="">Esta topología se utilizaba en las antiguas redes LAN Ethernet con cable coaxial, pero cayó en desuso debido al mejor desempeño de los cables de cobre.</p><p id="f09745aa-ea6e-4f0a-a914-89c4b46c3bcf" class="">Actualmente es utilizada en redes HFC (Híbridas de fibra óptica y cable coaxial) por parte de empresas de televisión por cable.</p><p id="cb14b4e0-5dca-43d4-af7d-48fec0776f75" class="">Se utiliza un cable troncal de gran extensión y todos los dispositivos que se quieren conectar a la red se conectan a ese troncal, esto brinda una mayor facilidad de conexión y abaratamiento de instalación.</p></div><div id="359f96f7-af93-49df-8272-e886992ca45e" style="width:37.5%" class="column"><figure id="1dfb6d9a-5ae3-4755-b979-a5ca76a52d80" class="image"><a href="Untitled%209.png"><img style="width:336px" src="Untitled%209.png"/></a></figure></div></div><h3 id="274fdbb7-dbe8-4f7c-9612-8ea0d1d0f51c" class="">Topología Malla</h3><div id="a9630f01-bca1-4bc8-b0d6-9b647a34e69a" class="column-list"><div id="7beba856-ddb0-41c2-a3e7-29ef64b06be4" style="width:56.25%" class="column"><ul id="6700aee0-7fa6-45c4-a325-e60287d7314f" class="bulleted-list"><li style="list-style-type:disc"><strong>Malla total (Full Mesh): </strong>Todos los dispositivos que forman la red tienen un enlace dedicado al resto de los dispositivos.</li></ul><ul id="e3bca069-12e7-45ea-91aa-04a4fc0e1a1e" class="bulleted-list"><li style="list-style-type:disc"><strong>Malla parcial (Partial Mesh):</strong> No todos los dispositivo de la red tienen un enlace dedicado a los demás dispositivos.</li></ul><p id="2ac18cf0-ea47-49a6-957e-482127408051" class="">Esta topología permite alcanzar a cualquier dispositivo de la red utilizando un enlace dedicado. Y si llegase a fallar un enlace, podemos utilizar otro camino; pero a costa de requerir mucho cable y presentando un gran costo.</p><p id="6e140a25-2e09-43bb-82e3-304fcd8022ba" class="">Es  buena opción para redes de tamaño reducido.</p></div><div id="79ca0f4f-f3c1-4daf-aac8-32e02e3aeaa9" style="width:43.74999999999999%" class="column"><figure id="1e056ff2-afb3-424b-a01b-5f3d035e2682" class="image"><a href="Untitled%2010.png"><img style="width:336px" src="Untitled%2010.png"/></a></figure></div></div><h3 id="91adab1c-4842-4758-ae71-8b1fbb41e242" class="">Topología Anillo</h3><div id="8f3b1898-fc94-4a6d-96bc-f96bd0059839" class="column-list"><div id="7ce992d5-6025-4642-b293-b125191e8cbc" style="width:43.75%" class="column"><p id="38b14570-72fb-4e96-ac0e-dc9b6553fbb0" class="">En esta topología cada dispositivo se conecta a otros 2 formando un anullo. Y si hay una falla en un enlace, la red queda inaccesible; sin embargo este problema se soluciona agregando anillos dobles o redundantes.
+Su instalación resulta sencilla y económica cuando se unen grandes distancias como por ejemplo, en centrales y hubs de una red de TV por cable.</p></div><div id="b4819199-7521-44b6-9429-fb8bca961b29" style="width:56.25%" class="column"><figure id="2b11286b-956e-4f16-9813-41d1e125f1b7" class="image"><a href="Untitled%2011.png"><img style="width:384px" src="Untitled%2011.png"/></a></figure></div></div><h3 id="32fa4d30-03e1-40d9-901b-13284658555f" class="">Topología Estrella</h3><div id="ec40381b-defb-4dc2-b2b0-ab68fbe88896" class="column-list"><div id="7a280a8f-6970-4bcd-9fbf-acd7529b34a3" style="width:43.75%" class="column"><p id="22e128a3-6c31-48d6-ad75-1ea644e54b03" class="">Es la topología dominante en redes LAN Ethernet, se basa en la utilización de un nodo central o Switch. De modo que cada dispositivo se conecta al nodo mediante un enlace dedicado. 
+Requiere más cable que otras topologías, pero en este es muy fácil detectar una falla, pues sólo el dispositivo del enlace afectado es el que queda incomunicado de la red.</p></div><div id="87393fb6-c2ba-4a91-b4d6-d88dc6bb6a00" style="width:56.25000000000002%" class="column"><figure id="60a6121a-143a-4199-8548-c00dfff6ae1f" class="image"><a href="Untitled%2012.png"><img style="width:288px" src="Untitled%2012.png"/></a></figure></div></div><hr id="b030f399-b8fd-4de5-95ee-312984ce32c0"/><h1 id="3b78ef2c-be57-4a46-97dd-c5b9e6b61b51" class="">Protocolos de red</h1><p id="a4c5c0cc-681c-43bb-bf5c-bdd50eb2a3d2" class="">Lo fundamental de la comunicación de datos es resolver el problema de<mark class="highlight-purple_background"> llevar la información de un punto A hacia un punto B</mark><mark class="highlight-blue"> </mark>sin errores, utilizando redes con la codificación correspondiente para su transmisión. Para ello contaremos con equipos transmisores y receptores de datos, junto con sus convertidores encargados de la codificación y decodificación. Estos sistemas de comunicación no responden ni reaccionan ante el contenido de la información y uno de sus componentes más importantes es el <mark class="highlight-purple_background"><strong>protocolo de comunicación</strong></mark>.</p><p id="0248233d-a0f5-4d75-8eff-a674dd63269e" class="">Un protocolo se define como las reglas que se deben cumplir para realizar la transmisión de información entre dos puntos.<mark class="highlight-purple_background"> </mark><mark class="highlight-purple_background"><strong>Un protocolo de red de comunicación de datos es un conjunto de reglas que gobierna el intercambio ordenado de datos dentro de la red</strong></mark><mark class="highlight-purple_background">.</mark></p><p id="ea5c9dd7-e77b-44a3-9c82-5f6a2895ce82" class="">Un protocolo de comunicaciones cuenta con ciertos elementos básicos:</p><ul id="a7834eb4-025f-40b3-ba30-fd1e15b564d5" class="bulleted-list"><li style="list-style-type:disc">Conjunto de símbolos llamados<strong> conjuntos de caracteres.</strong> Y habrá dos tipos de subconjuntos, existiendo una correspondencia entre cada carácter y los grupos de símbolos usados en el <strong>canal de transmisión</strong>, lo cuál es determinado por el <strong>código</strong>:<ul id="440b21a8-8c85-4049-96a5-1e184268994d" class="bulleted-list"><li style="list-style-type:circle"><strong>Caracteres imprimibles:</strong> Es decir, que <mark class="highlight-purple_background">contienen información</mark> o significado para las personas (contiene el mensaje).</li></ul><ul id="24e8a211-84b4-4570-a920-f025cb513231" class="bulleted-list"><li style="list-style-type:circle"><strong>Caracteres de control: </strong>Es decir, aquellos que se usan para transmitir la <mark class="highlight-purple_background">información del control</mark>.</li></ul></li></ul><ul id="6323c6cb-4bef-4241-b3b6-bd41e8b651ac" class="bulleted-list"><li style="list-style-type:disc"><strong>Conjunto de reglas</strong> para la <mark class="highlight-purple_background">secuencia y sincronización </mark>de los mensajes construidos a partir del conjunto de caracteres.</li></ul><ul id="4904fc0e-4933-4897-9b20-bda4a6f601a8" class="bulleted-list"><li style="list-style-type:disc"><strong>Procedimientos para determinar cuándo ha ocurrido un error en la transmisión y como corregirlo.</strong></li></ul><ul id="98411639-b539-471a-a983-3f81d8b6c6e0" class="bulleted-list"><li style="list-style-type:disc">El <strong>código</strong> que establece la correspondencia de los caracteres en el canal de transmisión. Y a su vez, estos códigos cuentan con sus respectivas equivalencias de grupos de bits.</li></ul><p id="8f951c8d-14ab-4f42-8257-8953d25effe2" class="">Y es justo la interacción de reglas a seguir entre el emisor y receptor lo que propicia que exista un significado con secuencias permitidas y a cierto tiempo, entre los caracteres de control y los mensajes formados a partir de los símbolos.</p><p id="0d01f7bb-c89e-4b67-a709-26f5d6ddc49c" class="">La detección de error y los procedimientos de corrección permiten la detección y la recuperación ordenada de los errores causados por factores fuera del control de la terminal en cada extremo de la comunicación.</p><p id="70d6c768-0424-402e-bcf1-cc3439e05656" class="">Y para que exista la comunicación en ambos puntos al extremo de un canal se deben emplear la misma configuración de protocolos (en el mismo “idioma”).</p><h2 id="40875df1-f5b9-4e92-9df0-d7ada652053a" class="">Niveles de comunicación de los protocolos</h2><p id="fbbe971e-008f-47a2-8ab9-ef96b9f39aea" class="">Los protocolos gestionan dos niveles de comunicación distintos. </p><ol type="1" id="e9c7c124-e65d-4e89-9c0d-bee8f8e056a6" class="numbered-list" start="1"><li>Las <strong>reglas de alto nivel </strong>definen cómo se comunican las aplicaciones.</li></ol><ol type="1" id="a877a831-687f-4b05-9812-ec57c4a9c15d" class="numbered-list" start="2"><li>Mientras que las<strong> reglas de bajo nivel </strong>definen cómo se transmiten las señales.</li></ol><p id="f56be368-1ec7-4928-9c1a-8f434d9dcbd0" class=""><mark class="highlight-purple_background">El protocolo de bajo nivel es básicamente la forma en que las señales se transmiten,</mark> transportando tanto datos como información y los procedimientos de control de uso del medio por los diferentes nodos. Los protocolo de bajo nivel más utilizados son:</p><ul id="2733ebd4-d7c8-44a0-be6a-fabf5e1e653b" class="bulleted-list"><li style="list-style-type:disc">Ethernet</li></ul><ul id="bb0ff3ee-d0e1-4cb5-a387-688a34941f24" class="bulleted-list"><li style="list-style-type:disc">Token ring</li></ul><ul id="99ec9e51-d9c6-49da-bddf-56e9404ce054" class="bulleted-list"><li style="list-style-type:disc">Token bus</li></ul><ul id="361ac959-3c9a-4697-a86a-f6d9e6a737b4" class="bulleted-list"><li style="list-style-type:disc">FDDI</li></ul><ul id="0eb41de2-a37a-4bbb-8d9a-75658e0f87d8" class="bulleted-list"><li style="list-style-type:disc">CDDI</li></ul><ul id="379d0f68-8542-4497-8bac-2f419e3e7884" class="bulleted-list"><li style="list-style-type:disc">HDLC</li></ul><ul id="1cb230b3-bafe-43b4-964c-f89d19928e7c" class="bulleted-list"><li style="list-style-type:disc">Frame Relay</li></ul><ul id="84bbb32f-6976-46bd-b907-50ac40637e13" class="bulleted-list"><li style="list-style-type:disc">ATM</li></ul><p id="24585f81-a9ef-4ad9-a2df-0ad0a5eca45e" class="">El protocolo de red determina el modo y organización de la información (tanto los datos como los controles) para su correcta transmisión por el medio físico con el protocolo de bajo nivel. 
+Los protocolos de red más comunes son:</p><ul id="b292d7ca-9434-4a48-a555-c12fd7650ef7" class="bulleted-list"><li style="list-style-type:disc">IPX/SPX  </li></ul><ul id="b5ab6a3f-d58b-4ea7-b42b-2bc88f4d13f3" class="bulleted-list"><li style="list-style-type:disc">DECnet</li></ul><ul id="53f1543f-8bf6-4f26-891d-13252935d6a5" class="bulleted-list"><li style="list-style-type:disc">X.25</li></ul><ul id="452ad15b-2111-4a59-8c69-c3faf5db5246" class="bulleted-list"><li style="list-style-type:disc">TCP</li></ul><ul id="85d622d0-6caf-49ad-8447-d4f80cc8121f" class="bulleted-list"><li style="list-style-type:disc">Apple Talk</li></ul><ul id="5ec24dea-9d04-466e-a7b4-aed8d331049f" class="bulleted-list"><li style="list-style-type:disc">NetBEUI</li></ul><h2 id="e9b59da8-24fd-4206-80b9-f8daeb157123" class="">Mode<strong><strong>lo de comunicación maestro-esclavo</strong></strong></h2><p id="46875fb0-e3c0-4bd8-ade2-87fdeb22b8e3" class=""><mark class="highlight-purple_background">En un circuito de comunicación de datos, la estación que transmite en el momento se llama </mark><mark class="highlight-purple_background"><strong>estación</strong></mark><mark class="highlight-purple_background"> </mark><mark class="highlight-purple_background"><strong>maestra</strong></mark><mark class="highlight-purple_background">, y la estación que recibe se llama </mark><mark class="highlight-purple_background"><strong>estación</strong></mark><mark class="highlight-purple_background"> </mark><mark class="highlight-purple_background"><strong>esclava</strong></mark><mark class="highlight-purple_background">. </mark>En una red centralizada, la estación primaria controla cuándo puede transmitir cada estación secundaria. Cuando transmite una estación secundaria se convierte en estación maestra, y la estación primaria es ahora la esclava. Por lo que el papel de estación maestra es temporal, y la estación primaria determina cuál es la maestra, este cambio se logra por una “interrogación” o una invitación de una estación primaria a una secundaria para que transmita un mensaje (pero las secundarias no pueden interrogar a las primarias). <mark class="highlight-purple_background"><strong>Y es justo en el momento en que una estación primaria interroga a una estación secundaria, cuando ocurre un cambio de dirección en línea; pues ahora la secundaria queda designada como maestra y debe responder.</strong></mark></p><p id="dd7c3e5d-7652-47ea-a021-8ed0ae2a9a58" class="">Los protocolos de enlace de datos se clasifican en general como asíncronos o síncronos.</p><ul id="10e7f74b-69ae-45f9-aba9-17317cd08c14" class="bulleted-list"><li style="list-style-type:disc"><strong>Protocolos asíncronos:
+</strong>Usan un formato de datos asíncronos y módems asíncronos.</li></ul><ul id="e43cc1f2-5826-494d-b2f8-635bde942d96" class="bulleted-list"><li style="list-style-type:disc"><strong>Protocolos síncronos:
+</strong>Usan un formato de datos sícrono y módems síncronos.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4a5c8b67-b882-49cf-bdb5-cc7f985ff92a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Sincrónico:
+</strong>Proceso que se desarrolla en perfecta correspondencia temporal con otro proceso o causa.</div></figure><h2 id="1d1bd8bd-26b4-489f-9e03-7111b92a6e65" class="">Jerarquía de Protocolos</h2><p id="ff00b31f-dc0c-470a-9dbb-e98e233c61d9" class=""><strong>Una jerarquía de protocolos es una combinación de protocolos</strong>. Cada nivel de la jerarquía especifica un protocolo diferente para la gestión de una función o de un subsistema del proceso de comunicación. Cada nivel tiene su propio conjunto de reglas.</p><p id="5d014851-a2db-4385-9e31-8889f62d366c" class="">Buscando<strong> reducir la complejidad de su diseño</strong>, muchas redes se organizan en forma de capas o niveles, cada una construida sobre la inferior. El número de capas, el nombre, el contenido y la función de cada una, difieren de red en red; sin embargo, en todas las redes el propósito de cada capa es ofrecer ciertos servicios a las capas superiores de modo que no tengan que ocuparse en detalle de la implementación real o en su nivel fundamental de los servicios.</p><figure id="7cef5a61-7f74-47b5-a510-bd9a4213abec" class="image"><a href="Untitled%2013.png"><img style="width:480px" src="Untitled%2013.png"/></a></figure><p id="ad187c1b-0a3b-456e-aba6-845b7adecf94" class="">La capa n de una máquina o host, lleva a cabo una “conversación” con la capa n de la otra. Y justo a las reglar y convenciones que se siguen en esta “conversación” son a lo que le llamamos, <strong>Protocolo de la capa </strong><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span></span><span>﻿</span></span>.</p><hr id="d3f18266-6a43-4929-9f86-50142486e2ac"/><h1 id="a3ce9cd3-13b3-4ce5-931f-7afb4be2a7a7" class="">Modelo TCP/IP </h1><p id="246773fa-fea0-42f5-b8fe-2d7c0de37e4b" class="">A raíz de la creación de <mark class="highlight-purple_background">Arpanet</mark>, que fue patrocinada por el Departamento de Defensa de Estados Unidas. Se logró conectar a cientos de universidades e instalaciones del gobierno usando las líneas telefónicas rentadas. A medida que la red fue creciendo, se añadieron a ella redes de satélites  radio y es aquí donde los protocolos existentes en ese momento comenzaron a presentar problemas para interactuar con este tipo de redes, de modo que se necesitó de un replanteamiento de referencia nuevo.</p><p id="ef683c65-8b17-4cf4-bc23-d44327c6def4" class="">Ahora, entre los principales objetivos que se perseguían al crear esta nueva arquitectura estaba el de <mark class="highlight-purple_background">interconectar entre sí a múltiples redes.</mark> Dando lugar a lo que conocemos como el modelo de referencia TCP/IP. Otro de los objetivos a la hora de su diseño fue que la red fuera <mark class="highlight-purple_background">capaz de sobrevivir a la pérdida del hardware de subred, aún así alguna de las máquinas o líneas de transmisión, dejara de funcionar repentinamente.</mark></p><h2 id="1bb0df7f-d8cd-4d79-9a2e-e40f2c467a97" class="">TCP</h2><p id="c0dd5f31-923a-40cc-83d0-096447aedfe8" class=""><mark class="highlight-purple_background">TCP es un protocolo transporte</mark><mark class="highlight-purple_background"><strong> orientado por conexión</strong></mark> que envía datos como un flujo de<mark class="highlight-purple_background"> bytes </mark><mark class="highlight-purple_background"><strong>sin estructura</strong></mark><mark class="highlight-purple_background">. </mark>Usando los número de secuencia y los mensajes de reconocimiento, el TCP puede proporcionar un nodo de envío con la información de entrega sobre los paquetes transmitidos a un nodo de destino. En caso de que los datos se hayan “perdido” al transitar de la fuente al destino, el TCP podrá<strong> retransmitir los datos </strong>hasta que se alcance una condición de descanso o hasta que se haya alcanzado la entrega exitosa,<mark class="highlight-purple_background"> priorizando la entrega “completa o fiel” del mensaje transmitido.</mark>
+TCP también puede reconocer mensajes duplicados y los descartará adecuadamente. Y en caso de que el ordenador de envío esté enviando más rápido de lo que el ordenador de recepción puede procesar, entonces el TCP puede emplear los mecanismos de control de flujo para <mark class="highlight-purple_background"><strong>reducir la transferencia de datos</strong></mark>. También puede comunicar la información de entrega a los protocolo de las capas superiores y a las aplicaciones que soporta.</p><p id="5c9ed1eb-6d6d-4dba-a1a0-e23c9006d699" class="">Todas estas características convierten a TCP en un <strong>Reliable Transport Protocol </strong>de punta a punta.</p><h2 id="0ae9833d-0e3d-4131-8050-af1ae1768099" class="">IP</h2><p id="517dc18f-7fcc-492b-8de9-f0fa4cd80269" class=""><mark class="highlight-purple_background">El IP es el protocolo primario de la capa 3 en el grupo de Internet</mark>. Es uno de los protocolos de internet más importantes, ya que permite el <mark class="highlight-purple_background">desarrollo y transporte de datagramas de IP</mark> (paquetes de datos), aunque sin garantizar su entrega. 
+En realidad, el protocolo IP procesa datagramas de IP de manera independiente al definir su representación, ruta y envío.
+El protocolo IP determina el destinatario del mensaje mediante 3 campos:</p><ol type="1" id="313b8f46-0f85-496e-83fb-80ab2f4a1b9d" class="numbered-list" start="1"><li>El campos de<strong> dirección IP</strong> (dirección del equipo)</li></ol><ol type="1" id="61c8ebad-f2fa-48ff-96b9-3a84f6c03a31" class="numbered-list" start="2"><li>El campo de <strong>máscara de subred</strong> (permite establecer la parte de la dirección IP que se relaciona con la red), y </li></ol><ol type="1" id="9575ce89-109c-4d2f-b769-772a1ae5e53e" class="numbered-list" start="3"><li>El campo de<strong> pasarela predeterminada </strong>(permite al protocolo de internet saber a qué equipo enviar un datagrama si el equipo de destino no se encuentra en la red de área local).</li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b0e6c86d-05d3-4f18-b73e-0d9ba47ed1a8"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>¿Qué es un datagrama?
+</strong>Los datos circulan en internet en forma de datagramas (paquetes). Se trata de datos encapsulados, es decir, se le agrega un encabezado que contiene información sobre su transporte (como la dirección IP de destino). Luego, los routers analizan y modifican los datos contenidos en un datagrama para que puedan transitar.</div></figure><h2 id="2199642c-2bf8-4259-8343-d1f0275a774f" class="">Capas en TCP/IP    </h2><figure id="e7aced44-5473-4291-81d0-c8a05b751799" class="image"><a href="Untitled%2014.png"><img style="width:528px" src="Untitled%2014.png"/></a></figure><h3 id="f4e3d2d3-e77c-4546-abf2-54031ca4586d" class="">I. Capa de Interfaz de red:</h3><p id="91c921f7-16ae-4669-9a9c-04a2914d0b50" class="">
+<mark class="highlight-purple_background"><strong>Este es el eje que mantiene unida toda la arquitectura a través de la infraestructura física. </strong></mark>Su misión es permitir que los nodos inyecten paquetes en cualquier red y los hagan viajar de forma independiente a su destino. Esta parte especifica la forma en la que los datos deben de enrutarse, sea cual sea el tipo de red utilizado. Esto abarca cables Ethernet, redes inalámbricas, tarjetas de interfaz de red y controladores de dispositivos de ordenador.
+También contiene la infraestructura técnica, como el código que convierte datos digitales en señales transmisibles.</p><ol type="1" id="f5db26a2-2846-42b5-ba38-e3aab911cefb" class="numbered-list" start="1"><li><mark class="highlight-purple_background"><strong>ARP (Address Resolution Protocol):</strong></mark><strong>
+</strong>Es un protocolo o procedimiento que conecta una dirección de Protocolo de Internet (IP) que se encuentra constante cambio, a una máquina física fija, también conocida como dirección de control de acceso a medios (MAC), en una red de área local (LAN).
+Este procedimiento de mapeo es importante porque las longitudes de las direcciones IP (32 bits) y MAC (48 bits) difieren, y se necesita de una traducción para que los sistemas puedan reconocerse entre sí.  ARP se encarga de <strong>traducir la dirección</strong> de 32 bits a 48 y viceversa.
+La IP más utilizada hoy en día es la IPv4.</li></ol><ol type="1" id="15b0e15d-eeaf-475d-afc4-47cbabc08651" class="numbered-list" start="2"><li><mark class="highlight-purple_background"><strong>L2TP (Layer 2 Tunneling Protocol):</strong></mark><strong>
+</strong>Es un protocolo de túnel que fue diseñado para soportar conexiones privadas VPN. Es a menudo utilizado por los ISP para permitir las operaciones de VPN. Es una especie de sucesor de PPTP.</li></ol><ol type="1" id="965b0534-c29d-42a0-a835-8370ca94d9f5" class="numbered-list" start="3"><li><mark class="highlight-purple_background"><strong>NDP (Neighbor Discovery Protocol):</strong></mark><strong>
+</strong>Sirve para descubrir las MAC vecinas, los routers vecinos, aprende las subredes y su longitud de prefijo y verifica que no esté duplicada la dirección IPv6 antes de usarla.</li></ol><ol type="1" id="732f53ee-2e83-4136-9aed-b823f1fa4265" class="numbered-list" start="4"><li><mark class="highlight-purple_background"><strong>ETHERNET</strong></mark><strong>
+</strong>Es la tecnología tradicional para conectar dispositivos en una red de área local o una red de área amplia por cable, lo que les permite comunicarse entre sí a través de un protocolo.
+Ethernet describe cómo los dispositivos de red pueden formatear y transmitir datos para que otros dispositivos del mismo segmento de red de área local o de campus puedan reconocer, recibir y procesar la información. Un cable Ethernet es el cableado físico, encapsulado, por el que viajan los datos.</li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="50ae4500-d098-4795-b0d6-fc39bf79cb98"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">El <strong>enrutamiento</strong> o <strong>ruteo</strong>. Es la función de buscar un camino entre todos los posibles en una red de paquetes cuyas topologías poseen una gran conectividad. Dado que se trata de encontrar la mejor ruta posible, lo primera será definir lo qué se entiende por una “mejor ruta” y en consecuencia cuál es la “métrica” de medición.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9b27fb42-d37b-486d-a810-8ddc0f503293"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>MAC (Media Access Control):
+</strong>La dirección MAC es un identificador de 48 bits (6 bloques de 2 caracteres hexadecimales) que corresponde de forma única a una tarjeta o dispositivo físico de la red. Se le conoce también como dirección física, y es única para cada dispositivo.</div></figure><h3 id="defcfdf0-1fba-4aa4-8ff5-4888a0c9a0a1" class="">II. Capa de Internet</h3><p id="ee261c6a-b1fa-4461-91d9-027063b4933f" class="">Es la capa responsable de proporcionar el paquete de datos (datagrama). C<strong>ontrola el flujo y enrutamiento del tráfico </strong>para garantizar que los datos se envían de forma rápida y correcta. 
+Esta capa también es responsable de volver a juntar el paquete de datos en el destino. Si hay mucho tráfico en internet, esta capa puede tardar un poco más en enviar un archivo, pero así es menos probable que se llegue a dañar.</p><ol type="1" id="a44e2a7a-ba22-4ac5-a372-e7d3d097f89e" class="numbered-list" start="1"><li><mark class="highlight-purple_background"><strong>IP (Internet Protocol):</strong></mark><strong>
+</strong>Es el protocolo principal de la familia de protocolos de internet y su importancia es fundamental para el intercambio de mensajes en redes informáticas. Fue concebido para garantizar el éxito de envío de paquetes de un emisor a un destinatario. Para lograr esto, el protocolo de internet establece un formato que determina el tipo de descripción que tienen estos paquetes de datos (también llamados datagramas IP).</li></ol><ol type="1" id="f12a1013-0780-425b-a2df-6151afa4424f" class="numbered-list" start="2"><li><mark class="highlight-purple_background"><strong>ICMP (Internet Control Message Protocol):</strong></mark><strong>
+</strong>EL protocolo de mensajes de control de internet, es un protocolo de capa de red utilizado por los dispositivos de red para diagnosticar problemas de comunicación de red. <strong>ICMP se utiliza principalmente para determinar si los datos están llegando o no a su destino previsto de manera oportuna</strong>. Comúnmente, el protocolo ICMP se utiliza en dispositivos de red, como en enrutadores. 
+Es crucial para el informe de errores y las pruebas, pero también se puede usar en ataques distribuidos de denegación de servicios (DDoS). </li></ol><ol type="1" id="0116c6b9-3e9b-43bb-9714-27448861bd75" class="numbered-list" start="3"><li><mark class="highlight-purple_background"><strong>IPSEC:</strong></mark><strong>
+</strong>Es un grupo de protocolos enfocados a la seguridad de las conexiones entre dispositivos. Ayuda a mantener seguros los datos enviados a través de redes públicas. A menudo se utiliza para configurar VPN, y funciona cifrando paquetes de IP, junto con la autentificación de la fuente de donde provienen los paquetes.</li></ol><ol type="1" id="586c6292-dd54-4490-b4a0-7a06cece2a62" class="numbered-list" start="4"><li><mark class="highlight-purple_background"><strong>IGMP (Protocolo de administración de grupos de internet):</strong></mark><strong>
+</strong>Es un protocolo que permite que varios dispositivos compartan una dirección IP para que todos puedan recibir los mismos atos. Es un protocolo de capa de red utilizado para configurar la multidifusión o multicasting en redes que utilizan el protocolo de internet IPv4. 
+Específicamente, IGMP permite que los dispositivos se unana a un grupo de multicasting o multidifusión.</li></ol><h3 id="2cfc5be8-6bc7-4153-a77d-20543b21a01d" class="">III. Capa de transporte</h3><p id="66a797c9-0157-43b0-bab8-0e84df293204" class="">En esta capa contamos con 2 protocolos de extremo a extremo. Uno de ellos es TCP (orientado a conexión) y el otro es UDP (sin conexión, no confiable). Esta capa proporciona una conexión de datos fiable entre 2 dispositivos de comunicación. Es como enviar un paquete asegurado. En esta capa se dividen los datos en paquetes, confirma los paquetes que ha recibido el remitente y se asegura de que el destinatario confirme que los paquetes fueron recibidos por su parte.</p><ol type="1" id="b30240db-7971-4797-a58a-542cc27078fe" class="numbered-list" start="1"><li><mark class="highlight-purple_background"><strong>TCP (Protocolo de Control de Transmisión):</strong></mark><strong>
+</strong>Es un estándar de comunicaciones que permite a los programas de aplicación y dispositivos informáticos intercambiar mensajes a través de una red. Está diseñado para enviar paquetes a través de internet y garantizar la entrega exitosa de datos y mensajes a través de redes.
+Es uno de los estándares básicos que definen las reglas de internet, garantizando la entrega de datos extremo a extremo.
+TCP organiza los datos para que puedan transmitirse entre un servidor y un cliente. Garantiza la integridad de los datos, establece una conexión entre la fuente y el destino garantizando que permanezca activa hasta que comience la comunicación. Luego divide grandes cantidades de datos en paquetes más pequeños, al mismo tiempo que garantiza la integridad de los datos durante todo el proceso.</li></ol><ol type="1" id="7dd64e42-e0db-4b0b-ab06-381e70bf9870" class="numbered-list" start="2"><li><mark class="highlight-purple_background"><strong>DCCP (Protocolo de Congestión de Datagramas):</strong></mark><strong>
+</strong>Es un protocolo a nivel transporte orientado al mensaje.
+Es básicamente un protocolo basado en mensajes que implementa la configuración segura de una conexión, su cierre, notificación explícita de congestión (ECN), control de congestión y negociación de características.
+Es similar a TCP en el sentido de que ambos son protocolos de nivel de transporte. Sin embargo, DCCP está orientado a los mensajes, mientras que TCP está orientado a conexión.<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6925b8c0-d2a4-441c-a2ee-cef520e175ed"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">La congestión de datagramas se refiere a la situación en la que hay demasiados datagramas que intentan pasar por una red al mismo tiempo. Esto puede causar una disminución en el rendimiento de la red y puede hacer que los datagramas se puertan o retrasen.
+
+Y justo DCCP utiliza el protocolo de congestión para evitar esta situación.</div></figure></li></ol><ol type="1" id="1a482d6e-3709-4332-9771-e793147a9980" class="numbered-list" start="3"><li><mark class="highlight-purple_background"><strong><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">μ</span></span></span></span></span><span>﻿</span></span></strong></mark><mark class="highlight-purple_background"><strong>TP (Micro Transport Protocol):</strong></mark><strong>
+</strong>Este protocolo funciona a través de UDP y actúa como una alternativa a TCP.
+Es básicamente un protocolo de transporte que tiene como punto diferencial que utiliza medidas de retardo unidireccional para su controlador de congestión. 
+Este protocolo surgió para evitar problemas de congestión en la conexión al utilizar BitTorrent.
+Permite la regulación automática del ancho de banda, evitando un impacto notorio en su conexión a internet.</li></ol><ol type="1" id="b70eb56e-aae4-4f2e-a4c8-196231f81c9c" class="numbered-list" start="4"><li><mark class="highlight-purple_background"><strong>UDP (Protocolo de datagramas de usuario):</strong></mark><strong>
+</strong>EL protocolo de datagramas de usuario es un protocolo que permite la transmisión sin conexión de datagramas en redes basadas en IP. Para obtener los servicios deseados en los host de destino, se basa en los puertos que están listados como uno de los campos principales en la cabecera UDP.
+El protocolo es muy simple ya que no proporciona detección de errores, pues no está orientado a conexión. Se encarga de transmitir los datagramas de manera veloz, pero<strong> no</strong> se enfoca mucho en <strong>garantizar la entrega de mensajes</strong>.</li></ol><ol type="1" id="dc33c77a-f378-4b4b-9e2a-dd0698164c6f" class="numbered-list" start="5"><li><mark class="highlight-purple_background"><strong>ICMP (Protocolo de Mensajes de Control de Internet):</strong></mark><strong>
+</strong>Es un protocolo que se utiliza dentro de una red para comunicar problemas con la transmisión de datos. Una de las principales maneras en que se utiliza es en determinar si los datos llegan a su destino y en el momento correcto.</li></ol><ol type="1" id="8eb80ab8-cca5-4b3a-a8bc-1921328e8182" class="numbered-list" start="6"><li><mark class="highlight-purple_background"><strong>FCP (Protocolo de Canal de Fibra):</strong></mark><strong>
+</strong>Es el protocolo de interfaz SCSI que utiliza una conexión de canal de fibra subyacente. Estos definen un mecanismo de transferencia de datos de alta velocidad que se puede utilizar para conectar estaciones de trabajo, mainframes, supercomputadoras, dispositivos de almacenamiento y pantallas.<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f2911a9c-d064-454d-9d9b-57d438de145d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>SCSI:
+</strong>Es un conjunto de interfaces que permiten a las computadoras personales comunicarse con hardware periférico como unidades de disco, unidades de cinta, unidades de CD-ROM, impresoras y escáneres de forma más rápida y con mayor flexibilidad.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f0270e9a-4a04-43a4-b1b4-740ffbdcab0f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Conexión de Canal de Fibra Subyacente:
+</strong>Se refiere a la conexión de Canal de Fibra que se utiliza para transportar el protocolo FCP. Es un protocolo de transferencia de datos de alta velocidad que proporciona una entrega sin pérdidas y en orden de datos en bloque sin procesar.</div></figure></li></ol><h3 id="f980a662-da67-4c37-be4a-c98a947d6256" class="">IV. Capa de Aplicación</h3><p id="915111e2-b2c9-4ca2-9ae8-cfd850b31435" class="">Aquí encontramos las capas de más alto nivel. Es el grupo de aplicaciones que permite al usuario acceder a la red. Ofrece a las aplicaciones la posibilidad de acceder a los servicios de las demás capas y define los protocolo que utilizan las aplicaciones para poder intercambiar datos.</p><p id="b2b38113-598c-49be-a0c9-789433a89084" class="">Aquí nos encontramos con el correo electrónico, las aplicaciones de mensajería y los programas de almacenamiento en la nube. Esto es lo que tiene mayor contacto con el usuario final al enviar y recibir datos.</p><ol type="1" id="dc97a9d4-a0d2-45a6-a021-a11d034abb89" class="numbered-list" start="1"><li><mark class="highlight-purple_background"><strong>SSH (Secure Shell Protocol):</strong></mark><strong>
+</strong>Es un protocolo de administración remota que permite a los usuarios controlar y modificar sus servidores remotos a través de internet mediante un mecanismo de autentificación. Proporciona un mecanismo para autentificar a nuestro usuario remoto, transferir entradas desde el cliente al host y retransmitir la salida de vuelta al cliente. 
+El servicio se creó como un reemplazo seguro para el Telnet sin cifrar y utiliza técnicas criptográficas para garantizar que todas las comunicaciones hacia y desde el servidor remoto sucedan de manera encriptada.</li></ol><ol type="1" id="1138f330-cffe-403d-8ea2-31a5b4b3cf8d" class="numbered-list" start="2"><li><mark class="highlight-purple_background"><strong>FTP (File Transfer Protocol):</strong></mark><strong>
+</strong>Se trata de un protocolo para transferir archivos entre varios ordenadores. 
+Un ordenador A se conecta directamente a un ordenador B y podrá ver los archivos que tiene disponible para compartir. Al verlos, simplemente podrá descargarlos directamente en el equipo que se ha conectado al otro.</li></ol><ol type="1" id="8286e6a9-56a8-4e88-b3fa-4c3da66cad0a" class="numbered-list" start="3"><li><mark class="highlight-purple_background"><strong>SMTP (Simple Mail Transfer Protocol):</strong></mark><strong>
+</strong>Es in protocolo de red básico que permite que los correos electrónicos viajen a través de internet. Un servidor SMTP es un ordenador encargado de llevar a cabo el servicio SMTP, que haciendo las veces de “cartero electrónico”, permite el transporte del correo electrónico por internet.</li></ol><ol type="1" id="2c9f1758-0e0d-4a86-9c6c-12010d5207d6" class="numbered-list" start="4"><li><mark class="highlight-purple_background"><strong>DHCP (Dynamic Host Configuration Protocol):</strong></mark><strong>
+</strong>Es un protocolo de red que utiliza una arquitectura cliente-servidor. Por tanto, tendremos uno o varios servidores DHCP y también uno o varios clientes, que se deberán comunicar entre ellos correctamente para que el servidor DHCP brinde información a los diferentes clientes conectados.
+Se encarga de asignar de manera dinámica y automática una dirección IP, ya sea IP privada desde el router hacía los equipos de la red local, o también una IP pública por parte de un operador que utilice este tipo de protocolo para el establecimiento de la conexión.</li></ol><ol type="1" id="beed00ce-ede9-440f-aeea-7d497d803d96" class="numbered-list" start="5"><li><mark class="highlight-purple_background"><strong>DNS (Domain Name System):</strong></mark><strong>
+</strong>Es el “directorio telefónico” de internet. Las personas acceden a la información en línea a través de nombres de dominio como <a href="http://google.com">google.com</a>. Los navegadores web interactúan mediante direcciones de Protocolos de Internet (IP). El DNS “traduce” los nombres de dominio a direcciones IP para que los navegadores puedan cargar los recursos de internet.</li></ol><ol type="1" id="ec300055-b971-4215-b614-3a808266e98d" class="numbered-list" start="6"><li><mark class="highlight-purple_background"><strong>RIP (Routing Information Protocol):</strong></mark><strong>
+</strong>Es un protocolo de puerta de enlace interna utilizado por los routers o encaminadores para intercambiar información acerca de redes del Internet Protocol (IP) a las que se encuentran conectados.
+Es uno de los protocolos de enrutamiento más antiguos y se utiliza para intercambiar información de enrutamiento entre routers dentro de un Sistema Autónomo.</li></ol><ol type="1" id="46000808-8ceb-4883-8aaf-202bf7719c11" class="numbered-list" start="7"><li><mark class="highlight-purple_background"><strong>SNMP (Simple Network Management):</strong></mark><strong>
+</strong>Es un protocolo para la gestión de la transferencia de información en redes, especialmente para uso en LAN, dependiendo de la versión elegida. Su utilidad en la gestión de redes proviene del hecho de que permite recopilar información sobre los dispositivos conectados a la red de una forma estandarizada en una gran variedad de tipos de hardware y software.</li></ol><ol type="1" id="9cd22570-7508-4d93-ae45-d785cd3b409f" class="numbered-list" start="8"><li><mark class="highlight-purple_background"><strong>HTTP (HyperText Transfer Protocol):</strong></mark><strong>
+</strong>Es el protocolo de transmisión de información de la World Wide Web, es decir, el código que se establece para que el computador solicitante y el que contiene la información solicitada puedan establecer una comunicación en el “mismo idioma” a la hora de transferir información por la red.</li></ol><hr id="24e6eee9-7596-44aa-8b30-d2f0562c8993"/></div></article></body></html>
